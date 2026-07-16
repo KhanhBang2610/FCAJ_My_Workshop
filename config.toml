@@ -1,6 +1,6 @@
 baseURL = "https://TuDuc2k4.github.io/workshop-cloudforge/"
 relativeURLs = false
-canonifyURLs = false
+canonifyURLs = true
 defaultContentLanguage = "vi"
 
 theme = "hugo-theme-relearn"

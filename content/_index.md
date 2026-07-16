@@ -1,44 +1,29 @@
 ---
-title: "Internship Report"
-date: 2024-01-01
+title: "Báo Cáo Thực Tập"
 weight: 1
-chapter: false
 ---
 
-    
-# Internship Report
+## Thông Tin Sinh Viên
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
+**Họ và tên:** Từ Minh Đức  
+**Email:** Tuminhduc20192004@gmail.com  
+**Trường Đại học:** HUTECH  
+**Chuyên ngành:** Phát triển phần mềm  
+**Lớp:** 22DTHE4  
+**Công ty thực tập:** Amazon Web Services Viet Nam Company Limited  
+**Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey  
+**Thời gian thực tập:** Từ 15/04/2026 đến 15/07/2026  
 
-### Student Information:
-&emsp; **Full Name:** Nguyen Van A
+<div class="avatar-container">
+  <img src="/images/avatar.jpg" alt="Avatar Từ Minh Đức" />
+</div>
 
-&emsp; **Phone Number:** 0989888999 
+### Nội dung Báo cáo
 
-&emsp; **Email:** Anguyenvan@gmail.com
-
-&emsp; **University:** Ho Chi Minh City University of Technology and Education
-
-&emsp; **Major:** Information Technology
-
-&emsp; **Class:** AWS082025
-
-&emsp; **Internship Company:** Amazon Web Services Viet Nam Company Limited
-
-&emsp; **Internship Position:** Workforce Bootcamp - First Cloud AI Journey
-
-&emsp; **Internship Duration:** From 12/08/2025 to 12/11/2025
-
-![Your profile picture](/images/avatar.png)
-
-### Report Content
-
-1.  [Worklog](1-Worklog/)
-2.  [Proposal](2-Proposal/)
-3.  [BlogsPosted](3-BlogsPosted/)
-4.  [Events Participated](4-EventParticipated/)
-5.  [Workshop](5-Workshop/)
-6.  [Self-evaluation](6-Self-evaluation/)
-7.  [Sharing and Feedback](7-Feedback/)
+1. [Nhật ký công việc](1-worklog/)
+2. [Đề xuất](2-proposal/)
+3. [Blog đã đăng](3-blogsposted/)
+4. [Sự kiện đã tham gia](4-eventparticipated/)
+5. [Hội thảo](5-workshop/)
+6. [Tự đánh giá](6-self-assessment/)
+7. [Chia sẻ và Cảm nhận](7-sharing-and-feedback/)

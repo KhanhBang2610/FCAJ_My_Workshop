@@ -1,0 +1,57 @@
+:root {
+  /* AWS Theme (overriding Relearn's default zen-light) */
+  --PRIMARY-color: #4881cd; /* Maps to MAIN-LINK-color */
+  --PRIMARY-HOVER-color: #599af1; /* Maps to MAIN-LINK-HOVER-color */
+  --SECONDARY-color: var(--PRIMARY-color);
+  --SECONDARY-HOVER-color: var(--PRIMARY-HOVER-color);
+  
+  --MENU-BORDER-color: #1c222a;
+  --MENU-TOPBAR-BORDER-color: #1c222a;
+  --MENU-TOPBAR-SEPARATOR-color: #20272b;
+  
+  --MENU-HEADER-BG-color: #283e5b;
+  --MENU-HEADER-BORDER-color: #435c7c;
+  
+  --MENU-SEARCH-color: #4d6584;
+  --MENU-SEARCH-BG-color: #202c3c;
+  --MENU-SEARCH-BORDER-color: #4d6584;
+  
+  --MENU-HOME-LINK-color: #ccc;
+  --MENU-HOME-LINK-HOVER-color: #fff;
+  --MENU-HOME-TOP-SEPARATOR-color: #20272b;
+  --MENU-HOME-SEPARATOR-color: #20272b;
+  --MENU-HOME-BOTTOM-SEPARATOR-color: #20272b;
+  
+  --MENU-SECTIONS-BG-color: #1c222a;
+  --MENU-SECTIONS-ACTIVE-BG-color: #0a0c0e;
+  --MENU-SECTIONS-LINK-color: #ccc;
+  --MENU-SECTIONS-LINK-HOVER-color: #e6e6e6;
+  --MENU-SECTION-ACTIVE-CATEGORY-color: #1c222a;
+  --MENU-SECTION-ACTIVE-CATEGORY-BG-color: #fff;
+  --MENU-SECTION-SEPARATOR-color: #20272b;
+  
+  --TOPBAR-BG-color: #fff;
+  --MAIN-TOPBAR-BORDER-color: #e6e6e6;
+  --MAIN-BG-color: #fff;
+  
+  --MAIN-TEXT-color: #323235;
+  --MAIN-TITLES-TEXT-color: #778ba5;
+  
+  --CODE-theme: relearn-light;
+  --CODE-BLOCK-color: #272822;
+  --CODE-BLOCK-BG-color: #fafafa;
+  --CODE-BLOCK-BORDER-color: #d2d2d2;
+  --CODE-INLINE-color: #5e5e5e;
+  --CODE-INLINE-BG-color: #fffae9;
+  --CODE-INLINE-BORDER-color: #f8e8c8;
+  
+  --BROWSER-theme: light;
+  --MERMAID-theme: default;
+  --OPENAPI-theme: light;
+  --OPENAPI-CODE-theme: idea;
+  
+  --BOX-CAPTION-color: #fff;
+  --BOX-BG-color: rgba(255, 255, 255, 0.833);
+  --BOX-TEXT-color: #303030;
+  --BOX-GREY-color: #d2d2d2;
+}

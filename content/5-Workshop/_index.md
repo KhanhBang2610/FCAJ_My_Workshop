@@ -1,31 +1,39 @@
 ---
 title: "Workshop"
-date: 2024-01-01
+date: 2026-07-09
 weight: 5
 chapter: false
 pre: " <b> 5. </b> "
 ---
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy verbatim** for your report, including this warning.
-{{% /notice %}}
 
-# Secure Hybrid Access to S3 using VPC Endpoints
+# Triển khai Kiến trúc Smart Media Analytics trên AWS
 
-#### Overview
+#### Tổng quan
 
-**AWS PrivateLink** provides private connectivity to AWS services from VPCs and your on-premises networks, without exposing your traffic to the Public Internet.
+**Smart Media Analytics** (phát triển bởi nhóm **CloudForge**) là một hệ thống phân tích media thông minh End-to-End. Để đưa một hệ thống đồ sộ như thế này lên Cloud, cần một hạ tầng mạng linh hoạt, bảo mật cao và tự động mở rộng bằng cách kết hợp các dịch vụ Serverless và Container của AWS.
 
-In this lab, you will learn how to create, configure, and test VPC endpoints that enable your workloads to reach AWS services without traversing the Public Internet.
+Bài workshop này là tài liệu ghi nhận lại **toàn bộ quá trình thực tế** mà đội ngũ CloudForge đã trải qua khi thiết kế và đưa dự án này lên môi trường AWS. Xuyên suốt workshop, chúng tiến hành thuật lại cách nhóm xây dựng một nền móng mạng VPC bảo mật, triển khai cụm pipeline xử lý AI (AI Pipeline) trên **Amazon ECS (Fargate)**, thiết lập cơ sở dữ liệu vector với **RDS PostgreSQL**, và cuối cùng là khởi chạy giao diện người dùng tự động thông qua **AWS Amplify**.
 
-You will create two types of endpoints to access Amazon S3: a Gateway VPC endpoint, and an Interface VPC endpoint. These two types of VPC endpoints offer different benefits depending on if you are accessing Amazon S3 from the cloud or your on-premises location
-+ **Gateway** - Create a gateway endpoint to send traffic to Amazon S3 or DynamoDB using private IP addresses.You route traffic from your VPC to the gateway endpoint using route tables.
-+ **Interface** - Create an interface endpoint to send traffic to endpoint services that use a Network Load Balancer to distribute traffic. Traffic destined for the endpoint service is resolved using DNS.
+Điểm nhấn của hệ thống là các mô hình bảo mật và tối ưu chi phí, chẳng hạn như việc đặt toàn bộ các dịch vụ tính toán (Compute) ở **Private Subnet** và truy cập Amazon S3 hoàn toàn thông qua mạng nội bộ nhờ vào **S3 Gateway Endpoint**.
 
-#### Content
+#### Tài nguyên dự án (Resources)
+- 🌐 **Live Demo:** [https://main.d10clqxr7o0tzf.amplifyapp.com/](https://main.d10clqxr7o0tzf.amplifyapp.com/)
+- 💻 **Source Code (GitHub):** [https://github.com/TuDuc2k4/smart_media_analytics_cloudforge](https://github.com/TuDuc2k4/smart_media_analytics_cloudforge)
 
-1. [Workshop overview](5.1-Workshop-overview)
-2. [Prerequiste](5.2-Prerequiste/)
-3. [Access S3 from VPC](5.3-S3-vpc/)
-4. [Access S3 from On-premises](5.4-S3-onprem/)
-5. [VPC Endpoint Policies (Bonus)](5.5-Policy/)
-6. [Clean up](5.6-Cleanup/)
+#### Nội dung
+
+1. [Tổng quan Kiến trúc](5.1-Architecture-overview/)
+2. [Chuẩn bị & Phân quyền IAM](5.2-Prerequisites/)
+3. [Nền móng Mạng nội bộ (VPC)](5.3-Network-vpc/)
+4. [Lưu trữ & Dữ liệu (S3, RDS, Redis)](5.4-Database-setup/)
+5. [Bảo mật (Cognito, Secrets Manager, WAF)](5.5-Security-setup/)
+6. [Điều phối Workflow (SQS, EventBridge, Step Functions)](5.6-Ingestion-workflow/)
+7. [Tính toán (ECS Backend & AI Worker)](5.7-Compute-setup/)
+8. [Tích hợp AI/ML (Bedrock & Transcribe)](5.8-AI-ML-integration/)
+9. [API & Real-time (API Gateway, ALB, WebSocket)](5.9-API-and-realtime/)
+10. [Tìm kiếm Ngữ nghĩa (Semantic Search)](5.10-Semantic-search/)
+11. [Triển khai Frontend (Amplify, Route53)](5.11-Frontend-deployment/)
+12. [CI/CD tự động (GitHub Actions, ECR)](5.12-CICD/)
+13. [Quan sát hệ thống (CloudWatch, X-Ray)](5.13-Observability/)
+14. [Hướng dẫn Sử dụng (Test the Application)](5.14-User-guide/)
+15. [Dọn dẹp tài nguyên](5.15-Cleanup/)

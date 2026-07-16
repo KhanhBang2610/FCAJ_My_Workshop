@@ -1,44 +1,16 @@
 ---
-title: "Events Participated"
-date: 2024-01-01
+title: "4. Sự kiện đã tham gia"
 weight: 4
-chapter: false
-pre: " <b> 4. </b> "
+alwaysopen: true
 ---
 
-{{% notice warning %}}
-⚠️ **Note:** The information below is for reference purposes only. Please **do not copy it verbatim** for your report, including this warning.
-{{% /notice %}}
+Dưới đây là danh sách và báo cáo thu hoạch chi tiết từ các sự kiện công nghệ mà tôi đã tham gia trong suốt quá trình thực tập:
 
-> In this section, you should list and describe in detail the events you have participated in during your internship or work experience.  
-> 
-> Each event should be presented in the format Event 1, Event 2, Event 3…, along with the following details:
-> * Event name
-> * Date and time
-> * Location (if applicable)
-> * Your role in the event (attendee, event support, speaker, etc.)
-> * A brief description of the event’s content and main activities
-> * Outcomes or value gained (lessons learned, new skills, contribution to the team/project)
-> * This listing helps demonstrate your actual participation as well as the soft skills and experience you have gained from each event.
+### 1. [Event First Cloud AI Journey (09/05/2026)](event-1/)
+**Tóm tắt:** Báo cáo tổng hợp các bài chia sẻ từ các diễn giả hàng đầu về phương pháp xây dựng thói quen học tập (Growth Mindset & cơ chế Streak tương tự mạng xã hội), cấu trúc Prompt chuẩn chỉnh & Automated Prompt Engineering (kiến trúc Proptimizer Serverless), cùng quy trình 4 bước vận hành kỷ luật của Developer Agent nhằm tối ưu hóa hiệu suất phát triển phần mềm.
 
-During my internship, I participated in two events. Each one was a memorable experience that provided new, interesting, and useful knowledge, along with gifts and wonderful moments.
+### 2. [Event FCAJ Community Day (23/05/2026)](event-2/)
+**Tóm tắt:** Những bài học thực tiễn giá trị rút ra từ sự kiện bao gồm: giải mã sự bất định trong đầu ra của LLM dù đã thiết lập temperature = 0, nguyên lý xây dựng "Second AI Brain" chuẩn mực để tránh bẫy rác thông tin trong hệ thống RAG, trải nghiệm 36 giờ Hackathon căng thẳng của đội VIB, giải pháp tối ưu hóa chi phí & bảo mật hạ tầng Edge bằng CloudFront CDN, tự động hóa tác vụ hành chính bằng Amazon Quick Suite, và thiết kế hệ thống Multi-Agent thông minh giải quyết bài toán chấm điểm tín dụng doanh nghiệp.
 
-### [Event 1](4.1-Event1/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
-
-&emsp;**Date & Time:** 09:00, August 13, 2025  
-
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
-
-&emsp;**Role:** Attendee  
-
----
-
-### [Event 2](4.2-Event2/)  
-&emsp;**Event Name:** GenAI-powered App-DB Modernization workshop  
-
-&emsp;**Date & Time:** 09:00, August 13, 2025  
-
-&emsp;**Location:** 26th Floor, Bitexco Tower, 02 Hai Trieu Street, Saigon Ward, Ho Chi Minh City  
-
-&emsp;**Role:** Attendee  
+### 3. [Event FCAJ Community Day (27/06/2026)](event-3/)
+**Tóm tắt:** Đi sâu vào kỷ nguyên AI Agentic với các giải pháp: chuyển đổi mô hình vận hành từ Cảnh báo (Alert) sang Hành động tự động (Action-driven) thông qua Deep Response Engine, xây dựng Voice Agent tiếng Việt an toàn cho ngân hàng, ứng dụng AWS DevOps Agent tự động truy vết và xử lý sự cố hạ tầng ECS, tự động hóa quy trình tuyển dụng thông minh (HR Automation) với Amazon Quick Suite, và thiết lập kết nối Model Context Protocol (MCP) bảo mật tuyệt đối trong vùng mạng VPC Private.

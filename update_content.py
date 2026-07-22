@@ -1,7 +1,7 @@
 import os
 import io
 
-base_path = r"d:\TuMinhDucWorkshop\workshop-site\content"
+base_path = r"d:\PhanThiKhanhBangWorkshop\workshop-site\content"
 
 def read_md(path):
     with io.open(path, 'r', encoding='utf-8') as f:
@@ -19,16 +19,16 @@ weight: 1
 
 ## Internship Report
 
-**Full Name:** Tu Minh Duc  
-**Email:** Tuminhduc20192004@gmail.com  
+**Full Name:** Phan Thi Khanh Bang
+**Email:** miukikb68@gmail.com  
 **University:** Ho Chi Minh City University of Technology  
-**Major:** Software Development  
-**Class:** 22DTHE4  
+**Major:** Software Engineering  
+**Class:** 22DTHE2  
 **Internship Company:** Amazon Web Services Viet Nam Company Limited  
 **Internship Position:** Workforce Bootcamp - First Cloud AI Journey  
 **Internship Duration:** From 15/04/2026 to 15/07/2026  
 
-*(Please insert your avatar here by adding an image markdown like `![Avatar](/path/to/avatar.png)`)*
+<img src="images/avatar.jpg" alt="Avatar Phan Thi Khanh Bang" />
 
 ### Report Content
 
@@ -48,11 +48,11 @@ weight: 1
 
 ## Báo cáo thực tập
 
-**Họ và tên:** Từ Minh Đức  
-**Email:** Tuminhduc20192004@gmail.com  
+**Họ và tên:** Phan Thị Khánh Băng  
+**Email:** miukikb68@gmail.com  
 **Trường Đại học:** HUTECH  
-**Chuyên ngành:** Phát triển phần mềm  
-**Lớp:** 22DTHE4  
+**Chuyên ngành:** Công nghệ phần mềm  
+**Lớp:** 22DTHE2  
 **Công ty thực tập:** Amazon Web Services Viet Nam Company Limited  
 **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey  
 **Thời gian thực tập:** Từ 15/04/2026 đến 15/07/2026  

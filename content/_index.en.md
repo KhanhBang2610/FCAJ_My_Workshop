@@ -5,17 +5,17 @@ weight: 1
 
 ## Internship Report
 
-**Full Name:** Tu Minh Duc  
-**Email:** Tuminhduc20192004@gmail.com  
+**Full Name:** Phan Thi Khanh Bang
+**Email:** miukikb68@gmail.com  
 **University:** Ho Chi Minh City University of Technology  
-**Major:** Software Development  
-**Class:** 22DTHE4  
+**Major:** Software Engineering  
+**Class:** 22DTHE2  
 **Internship Company:** Amazon Web Services Viet Nam Company Limited  
 **Internship Position:** Workforce Bootcamp - First Cloud AI Journey  
 **Internship Duration:** From 15/04/2026 to 15/07/2026  
 
 <div class="avatar-container">
-  <img src="/images/avatar.jpg" alt="Avatar Tu Minh Duc" />
+  <img src="images/avatar.jpg" alt="Avatar Phan Thi Khanh Bang" />
 </div>
 
 ### Report Content

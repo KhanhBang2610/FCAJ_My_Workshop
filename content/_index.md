@@ -5,17 +5,17 @@ weight: 1
 
 ## Thông Tin Sinh Viên
 
-**Họ và tên:** Từ Minh Đức  
-**Email:** Tuminhduc20192004@gmail.com  
+**Họ và tên:** Phan Thị Khánh Băng  
+**Email:** miukikb68@gmail.com  
 **Trường Đại học:** HUTECH  
-**Chuyên ngành:** Phát triển phần mềm  
-**Lớp:** 22DTHE4  
+**Chuyên ngành:** Công nghệ phần mềm  
+**Lớp:** 22DTHE2  
 **Công ty thực tập:** Amazon Web Services Viet Nam Company Limited  
 **Vị trí thực tập:** Workforce Bootcamp - First Cloud AI Journey  
 **Thời gian thực tập:** Từ 15/04/2026 đến 15/07/2026  
 
 <div class="avatar-container">
-  <img src="/images/avatar.jpg" alt="Avatar Từ Minh Đức" />
+  <img src="images/avatar.jpg" alt="Avatar Phan Thị Khánh Băng" />
 </div>
 
 ### Nội dung Báo cáo

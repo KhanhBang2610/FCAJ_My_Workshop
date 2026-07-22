@@ -1,6 +1,6 @@
-baseURL = "https://TuDuc2k4.github.io/workshop-cloudforge/"
+baseURL = "https://KhanhBang2610.github.io/FCAJ_My_Workshop/"
 relativeURLs = false
-canonifyURLs = true
+canonifyURLs = false
 defaultContentLanguage = "vi"
 
 theme = "hugo-theme-relearn"

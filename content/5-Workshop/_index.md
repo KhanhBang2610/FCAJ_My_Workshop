@@ -6,26 +6,19 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
-# Triển khai Hệ thống Quản lý Công việc trên AWS Serverless
+# Deploying the Task Management System on AWS Serverless
 
-#### Tổng quan
+#### Overview
 
-Workshop này hướng dẫn từng bước triển khai và xác thực **Hệ thống Quản lý Công việc (Task Management System)** sử dụng kiến trúc serverless của AWS. Hệ thống hỗ trợ xác thực người dùng, quản lý bảng công việc, theo dõi nhiệm vụ, cập nhật trạng thái và ghi nhật ký vận hành thông qua các dịch vụ AWS được quản lý.
+This workshop walks through the deployment and validation of a **Task Management System** using a serverless AWS architecture. The system supports user authentication, board management, task tracking, status updates, and operational logging through managed AWS services.
 
-Kiến trúc sử dụng:
-- **Amazon S3** để host tĩnh frontend
-- **Amazon Cognito** để xác thực người dùng
-- **AWS AppSync** cho GraphQL API
-- **AWS Lambda** để xử lý logic nghiệp vụ backend
-- **Amazon DynamoDB** để lưu trữ dữ liệu
-- **IAM** để kiểm soát quyền truy cập
-- **Amazon CloudWatch** để thu thập log và quan sát hệ thống
+The architecture uses Amazon S3 for static frontend hosting, Amazon Cognito for user authentication, AWS AppSync for the GraphQL API, AWS Lambda for backend business logic, Amazon DynamoDB for data storage, IAM for access control, and Amazon CloudWatch for logs and observability.
 
-#### Nội dung
+#### Content
 
-1. [Tổng quan Workshop](5.1-workshop-overview/)
-2. [Chuẩn bị môi trường và quyền IAM](5.2-prerequiste/)
-3. [Triển khai frontend với Amazon S3](5.3-s3-vpc/)
-4. [Cấu hình xác thực, API và backend](5.4-s3-onprem/)
-5. [Xác thực DynamoDB, index và PITR](5.5-policy/)
-6. [Dọn dẹp tài nguyên](5.6-cleanup/)
+1. [Workshop overview](5.1-workshop-overview/)
+2. [Environment preparation and IAM permissions](5.2-prerequiste/)
+3. [Deploy the frontend with Amazon S3](5.3-s3-vpc/)
+4. [Configure authentication, API, and backend](5.4-s3-onprem/)
+5. [Validate DynamoDB, indexes, and PITR](5.5-policy/)
+6. [Clean up resources](5.6-cleanup/)

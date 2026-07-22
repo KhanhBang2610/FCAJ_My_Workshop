@@ -1,16 +1,12 @@
 ---
 title: "4. Events Participated"
 weight: 4
-alwaysopen: true
 ---
 
-Below is the list and detailed harvest reports from the technology events I participated in during my internship:
+Welcome to the **Events Participated** section! Attending tech events not only helps me expand my network but is also a fantastic opportunity to learn practical lessons from industry experts. Below is a summary of the valuable takeaways I gathered from two recent major events. Click on the titles to view the details:
 
-### 1. [First Cloud AI Journey Event (09/05/2026)](event-1/)
-**Summary:** A report summarizing insights from leading speakers on building learning habits (Growth Mindset & social-media-style Streak mechanisms), standard Prompt structures & Automated Prompt Engineering (Serverless Proptimizer architecture), and the Developer Agent's disciplined 4-step workflow to optimize software development efficiency.
+### 1. [Summary Report: Event CD AWS](event-1/)
+This event gave me multifaceted perspectives on both technical and soft skills. From recognizing the importance of hands-on learning through AWS Cloud Quest and the open-source initiative FLoCI, to strategies for building self-confidence and overcoming procrastination. Notably, the event highlighted the "hidden icebergs" in software projects and the vital role of DevOps in early risk detection and prevention.
 
-### 2. [FCAJ Community Day Event (23/05/2026)](event-2/)
-**Summary:** Valuable practical lessons learned from the event, including: decoding LLM output variance even with temperature = 0, the principles of building a proper "Second AI Brain" to avoid data pollution in RAG systems, VIB team's intense 36-hour Hackathon experience, optimizing cost & edge infrastructure security using CloudFront CDN, automating administrative tasks with Amazon Quick Suite, and designing smart Multi-Agent systems to solve corporate credit evaluation.
-
-### 3. [FCAJ Community Day Event (27/06/2026)](event-3/)
-**Summary:** Delving into the Agentic AI era with solutions: transitioning operational models from Alert-driven to Action-driven using the Deep Response Engine, building secure Vietnamese Voice Agents for banking, applying AWS DevOps Agents to automatically trace and mitigate ECS infrastructure issues, automating HR recruitment processes with Amazon Quick Suite, and establishing secure Model Context Protocol (MCP) connections inside a VPC Private network.
+### 2. [Recap Report: FCAJ Community Day Event (June 27, 2026)](event-2/)
+This was an extremely impressive event focusing on the AI Agentic era. I learned how the Deep Response Engine and AWS DevOps Agent shift operational mindsets from "alert-driven" to "action-driven," automating troubleshooting and reducing MTTR by 77%. Additionally, topics like Voice Agents, AI applications in HR (Amazon Quick Suite), and especially how to set up secure MCP connections in a Private VPC provided invaluable practical knowledge. The core takeaway was: "AI Agents won't replace humans, but humans using AI Agents will replace those who don't."

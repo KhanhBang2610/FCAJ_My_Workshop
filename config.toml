@@ -10,14 +10,14 @@ home = [ "HTML", "RSS", "JSON"]
 
 [params]
   themeVariant = ["zen-light", "auto"]
-  author = "Từ Minh Đức"
+  author = "Phan Thị Khánh Băng"
   showVisitedLinks = true
   disableBreadcrumb = false
   disableNextPrev = false
 
 [Languages]
 [Languages.vi]
-title = "Báo cáo thực tập - Từ Minh Đức"
+title = "Báo cáo thực tập - Phan Thị Khánh Băng"
 weight = 1
 languageName = "Tiếng Việt"
 
@@ -28,7 +28,7 @@ url = "http://awsstudygroup.com"
 weight = 20
 
 [Languages.en]
-title = "Internship Report - Tu Minh Duc"
+title = "Internship Report - Phan Thi Khanh Bang"
 weight = 2
 languageName = "English"
 

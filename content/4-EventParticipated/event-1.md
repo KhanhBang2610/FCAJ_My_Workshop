@@ -1,9 +1,9 @@
 ---
-title: "4.1. Báo cáo Tổng kết: Event CD AWS (30/5/2027)"
+title: "4.1. Báo cáo Tổng kết: Event CD AWS (30/5/2026)"
 weight: 1
 ---
 
-## Báo cáo Tổng kết: “Event CD AWS (30/5/2027)”
+## Báo cáo Tổng kết: “Event CD AWS (30/5/2026)”
 
 ### Mục tiêu Sự kiện
 - Chia sẻ kiến thức thực tế, kỹ năng và kinh nghiệm từ các diễn giả trong ngành

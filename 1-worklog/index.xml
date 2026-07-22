@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>1. Nhật ký công việc :: Báo cáo thực tập - Phan Thị Khánh Băng</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/index.html</link><description>Tổng quan quá trình thực tập và phát triển dự án nhóm trên AWS, được chia nhỏ thành các chặng đường theo từng tuần với mục tiêu cụ thể:
+Tuần 1: Kickoff &amp; AWS Fundamentals: Tham gia Kickoff FCAJ Bootcamp 2026, tìm hiểu quy định AWS, tạo tài khoản AWS và kết nối nhóm. Tuần 2: Explore AWS Tasks &amp; Credit: Hoàn thành 5 task Explore AWS (EC2, Bedrock, Budgets, Lambda, RDS) để nhận credit và học module 02. Tuần 3: Onboarding &amp; Project Setup: Làm quen môi trường công ty, phân công công việc Agile/Scrum và khởi tạo GitHub repo cho dự án nhóm. Tuần 4: Module Learning &amp; Architecture: Học các module AWS 04-05, nghiên cứu các bài AWS Blog và họp nhóm thiết kế kiến trúc. Tuần 5: AWS Architecture Design: Thống nhất danh sách dịch vụ AWS sử dụng (Route 53, CloudFront, Cognito, Lambda, DynamoDB, SES, CI/CD…) và hoàn thiện sơ đồ kiến trúc. Tuần 6: Frontend Bootstrap: Khởi tạo dự án React + Vite + TypeScript + Tailwind CSS, dựng các UI primitives và họp demo. Tuần 7: Authentication UI: Phát triển giao diện Login, Register, Zod validation, cấu hình JWT interceptors và Protected Routes. Tuần 8: Admin Panel UI: Xây dựng Admin Panel quản lý người dùng, phân quyền Role, Invite Member và Project Settings. Tuần 9: Kanban Task Board UI: Triển khai bảng Kanban với 4 cột trạng thái (dnd-kit), tạo Modal CRUD Task và Assignee. Tuần 10: Activity Log &amp; Realtime: Xây dựng Activity Feed audit trail, tích hợp Socket thời gian thực và demo E2E. Tuần 11: E2E Integration Testing: Kiểm thử tích hợp E2E toàn hệ thống, xử lý bug và merge code vào nhánh main. Tuần 12: Workshop Documentation: Soạn thảo tài liệu Workshop hướng dẫn triển khai toàn bộ kiến trúc dự án.</description><generator>Hugo</generator><language>vi</language><atom:link href="https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/index.xml" rel="self" type="application/rss+xml"/><item><title>1.1. Nhật ký Tuần 1</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.1-week1/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.1-week1/index.html</guid><description>Thời gian: 17/04/2026 - 26/04/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 1 17/04/2026 - 26/04/2026 - Tham gia buổi Kickoff chương trình được tổ chức bởi cộng đồng FCAJ - Workforce Bootcamp 2026 tại Trung tâm đào tạo nhân lực chất lượng cao (Hutech Khu E, E3-05.01). Đã hiểu thêm về chương trình thực tập lần này để hoàn thành khóa Thực Tập Tốt Nghiệp.
+- Đã đọc và hiểu, nắm rõ các nội quy và quy tắc khi thực tập tại văn phòng công ty AWS.
+- Thực hiện tạo tài khoản AWS, tìm hiểu các bài lab của AWS.
+- Tạo tài khoản Linkedln để kết nạp thêm thành viên, làm quen với các thành viên trong nhóm project.</description></item><item><title>1.2. Nhật ký Tuần 2</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.2-week2/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.2-week2/index.html</guid><description>Thời gian: 26/04/2026 - 03/05/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 2 26/04/2026 - 03/05/2026 - Hoàn thành 5 task ở mục Explore AWS trên giao diện Management Console để lấy đủ credit phục vụ nghiên cứu dự án nhóm và sử dụng các dịch vụ AWS:
++ Launch EC2 Instance - $20 credit
++ Use Amazon Bedrock Playground - $20 credit
++ Set up AWS Budgets - $20 credit
++ Create Lambda Web App - $20 credit
++ Create RDS Database - $20 credit
+- Học các module từ 02_01 đến 02_20, thực hành các bài lab trên hệ thống AWS.</description></item><item><title>1.3. Nhật ký Tuần 3</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.3-week3/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.3-week3/index.html</guid><description>Thời gian: 04/05/2026 - 10/05/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 3 04/05/2026 - 10/05/2026 - Lần đầu lên công ty, làm quen với môi trường, cơ sở vật chất, văn hóa ở công ty, gặp gỡ các anh chị admin.
+- Học các module từ 03_01 đến 03_7, thực hành các bài lab trên hệ thống AWS.
+- Tạo file RCS_Agile_Scrum_Architecture để phân công công việc làm project nhóm cho các thành viên.
+- Tạo repo project nhóm trên Github và add tất cả thành viên.</description></item><item><title>1.4. Nhật ký Tuần 4</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.4-week4/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.4-week4/index.html</guid><description>Thời gian: 11/05/2026 - 17/05/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 4 11/05/2026 - 17/05/2026 - Học các module từ 04_01 đến 04_4, 05_01 đến 05_5 và thực hành các bài lab trên hệ thống AWS.
+- Nghiên cứu các bài Blog và họp team để nghiên cứu vẽ kiến trúc của dự án.</description></item><item><title>1.5. Nhật ký Tuần 5</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.5-week5/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.5-week5/index.html</guid><description>Thời gian: 18/05/2026 - 24/05/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 5 18/05/2026 - 24/05/2026 - Nhóm thống nhất kiến trúc dự án và phân công vẽ kiến trúc. Các dịch vụ AWS được sử dụng được nhóm nghiên cứu:
++ Route 53: DNS, định tuyến tên miền.
++ CloudFront: CDN, tăng tốc phân phối nội dung.
++ Certificate Manager (ACM): Quản lý chứng chỉ SSL/TLS, cung cấp HTTPS cho website.
++ AWS WAF: Tường lửa ứng dụng web, bảo vệ hệ thống khỏi các cuộc tấn công như SQL Injection, XSS,…
++ Amazon S3 (User Attachments): Lưu trữ tệp đính kèm do người dùng tải lên.
++ Amazon S3 (Static Website Assets): Lưu trữ các tệp tĩnh của website như HTML, CSS, JavaScript, hình ảnh,…
++ Amazon Cognito: Quản lý xác thực người dùng, đăng ký, đăng nhập và cấp JWT Token.
++ AWS AppSync: Cung cấp GraphQL API, xử lý Query, Mutation và Subscription (Realtime).
++ AWS Lambda (API Resolver &amp; Auth): Xử lý logic nghiệp vụ và xác thực người dùng.
++ AWS Lambda (Cronjob Scheduler): Thực hiện các tác vụ theo lịch như kiểm tra deadline, gửi thông báo.
++ AWS Lambda (Stream Processor): Xử lý dữ liệu từ DynamoDB Streams và thực hiện các tác vụ tự động.
++ Amazon EventBridge Scheduler: Lên lịch kích hoạt Lambda theo thời gian định sẵn.
++ Amazon DynamoDB: Cơ sở dữ liệu NoSQL lưu trữ dữ liệu của hệ thống.
++ DynamoDB Point-in-Time Recovery (PITR): Sao lưu và khôi phục cơ sở dữ liệu về một thời điểm trước đó.
++ DynamoDB Streams: Ghi nhận các thay đổi dữ liệu trong DynamoDB để kích hoạt xử lý sự kiện.
++ Amazon CloudWatch: Giám sát hệ thống, thu thập Logs, Metrics và thiết lập cảnh báo.
++ Amazon Simple Email Service (SES): Gửi email thông báo, nhắc việc và xác nhận cho người dùng.
++ Amazon SQS Dead Letter Queue (DLQ): Lưu trữ các tác vụ xử lý thất bại để kiểm tra và xử lý lại.
++ AWS CodePipeline: Tự động hóa quy trình CI/CD từ mã nguồn đến triển khai.
++ AWS CodeBuild: Build, kiểm thử và đóng gói mã nguồn.
++ AWS CloudFormation: Triển khai và quản lý hạ tầng AWS bằng Infrastructure as Code (IaC).
+- Được các anh, chị admin góp ý và cùng nhóm chỉnh sửa lại kiến trúc về luồng hoạt động của các dịch vụ.</description></item><item><title>1.6. Nhật ký Tuần 6</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.6-week6/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.6-week6/index.html</guid><description>Thời gian: 25/05/2026 - 31/05/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 6 25/05/2026 - 31/05/2026 - Làm task #005: Bootstrap React + Vite + TypeScript + Tailwind:
++ Install Tailwind CSS v3, cấu hình dark mode class.
++ Install: axios, react-router-dom@6, @tanstack/react-query@5, zustand, lucide-react, date-fns.
++ Cấu hình Vite proxy: /api → http://backend:3001.
++ Tạo src/lib/api.ts: Axios instance, interceptors JWT + 401 redirect.
++ Tạo src/types/index.ts: TypeScript interfaces (Task, User, Notification, ActivityLog).
++ Tạo src/store/authStore.ts: Zustand với user, accessToken, setAuth(), clearAuth().
++ Tạo src/context/AuthProvider.tsx: check localStorage on mount, auto-refresh.
++ Tạo App.tsx: routes /, /login, /register, /dashboard, /projects/:id.
++ Tạo AppShell.tsx: Sidebar, TopBar với notification bell.
++ Tạo UI primitives: LoadingSpinner, ErrorBanner, EmptyState, Badge, Button, Modal
+- Họp nhóm offline:
++ Demo localhost:5173 với HealthCheck componentReview docs/api-contract.md — cả team xác nhận field names, không có misalignment.
++ Check và merge vào develop các nhánh git của các thành viên.</description></item><item><title>1.7. Nhật ký Tuần 7</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.7-week7/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.7-week7/index.html</guid><description>Thời gian: 01/06/2026 - 07/06/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 7 01/06/2026 - 07/06/2026 - Làm task #010: Build Authentication UI — Login, Register &amp; Protected Routes:
++ Install react-hook-form + @hookform/resolvers.
++ Login.tsx: form email + password, gọi POST /auth/login.
++ Register.tsx: name + email + password + confirm password.
++ Zod validation schemas matching data contract.
++ ProtectedRoute.tsx: redirect /login nếu không có token.
++ AdminRoute.tsx: redirect 403 nếu không phải admin.
++ Token storage: memory + httpOnly cookie pattern.
++ Auto token refresh: Axios interceptor retry với refresh token khi 401.
++ UI dark theme: bg-gray-950, card bg-gray-900, focus ring blue-500.
++ Loading state khi submit, error display rõ ràng.
+- Họp nhóm offline:
++ Demo Demo: Login UI, Register UI, ProtectedRoute redirect.
++ Check và merge vào develop các nhánh git của các thành viên.</description></item><item><title>1.8. Nhật ký Tuần 8</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.8-week8/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.8-week8/index.html</guid><description>Thời gian: 08/06/2026 - 14/06/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 8 08/06/2026 - 14/06/2026 - Làm task #017: Admin Panel UI — User Management &amp; Project Settings:
++ ProjectSettings.tsx: chỉ accessible với admin role.
++ MembersTable.tsx: list members với role badge, action buttons.
++ InviteMemberModal.tsx: input email, select role, submit.
++ Implement PATCH role: dropdown thay đổi role.
++ Remove member: confirm dialog trước khi xóa.
++ ProjectDangerZone.tsx: delete project (admin only, confirm).
++ Role badge: ADMIN = purple/violet, MEMBER = gray.
++ Non-admin truy cập /settings → redirect to board.
++ Activity log trong settings: member join/leave/role change.</description></item><item><title>1.9. Nhật ký Tuần 9</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.9-week9/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.9-week9/index.html</guid><description>Thời gian: 15/06/2026 - 21/06/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 9 15/06/2026 - 21/06/2026 - Làm task #012: Task Board UI — Kanban Board, Task Cards &amp; CRUD:
++ Install @dnd-kit/core + @dnd-kit/sortable.
++ ProjectBoard.tsx: fetch GET /tasks?projectId=, render Kanban.
++ KanbanColumn.tsx: 4 columns (TODO, IN_PROGRESS, DONE, BLOCKED) color-coded.
++ TaskCard.tsx: title, priority badge, assignee avatar, due date chip.
++ CreateTaskModal.tsx: form tạo task (title, description, priority, assignee, due date).
++ TaskDetailModal.tsx: xem chi tiết + edit inline.
++ AssigneeSelect.tsx: dropdown chọn member từ project.</description></item><item><title>1.10. Nhật ký Tuần 10</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.10-week10/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.10-week10/index.html</guid><description>Thời gian: 22/06/2026 - 28/06/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 10 22/06/2026 - 28/06/2026 - Làm task #014: Activity Log Panel — Audit Trail &amp; Live Feed:
++ ActivityStore.ts: activities[], hasMore, page, fetchActivities(), prepend().
++ ActivityFeed.tsx: scrollable timeline panel (fixed right sidebar).
++ ActivityItem.tsx: avatar, action sentence, time ago.
++ Human-readable sentences: ‘Phong đã tạo task X’, ‘Huân đã giao task Y cho Băng’.
++ Filter: tất cả / task changes / assignments.
++ Infinite scroll / load more pagination.
++ Realtime: socket activity:logged → prepend với highlight animation.
++ Timestamp: “vừa xong”, “5 phút trước”, “hôm qua lúc 10:30”.
++ Diff display: trước → sau khi status thay đổi.
+- Họp nhóm offline:
++ Live demo end-to-end: Register → Login → Create Project → Invite Member → Create Task → Assign Task.
++ Check và merge vào develop các nhánh git của các thành viên.</description></item><item><title>1.11. Nhật ký Tuần 11</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.11-week11/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.11-week11/index.html</guid><description>Thời gian: 29/06/2026 - 05/07/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 11 29/06/2026 - 05/07/2026 - Làm task #019: E2E Integration Testing &amp; Bug Fixing:
++ Test flow: Register → Login → Create Project → Invite → Create Task → Assign.
++ 2 browser tabs, 2 accounts: verify realtime sync.
++ Test permissions: member không delete task người khác.
++ Test notifications: assign → bell increment ngay.
++ Test activity log: mọi action xuất hiện trong feed.
+- Check và merge nhánh develop vào nhánh main.</description></item><item><title>1.12. Nhật ký Tuần 12</title><link>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.12-week12/index.html</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://KhanhBang2610.github.io/FCAJ_My_Workshop/1-worklog/1.12-week12/index.html</guid><description>Thời gian: 06/07/2026 - 12/07/2026 Chi tiết công việc trong tuần:
+Tuần Ngày Nội dung 12 06/07/2026 - 12/07/2026 - Soạn thảo tài liệu Workshop hướng dẫn triển khai toàn bộ kiến trúc dự án.</description></item></channel></rss>

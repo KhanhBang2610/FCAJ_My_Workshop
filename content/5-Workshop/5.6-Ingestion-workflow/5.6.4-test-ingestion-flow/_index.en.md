@@ -17,20 +17,20 @@ The objective of this phase is to confirm that Amazon EventBridge correctly catc
 - Access the console interface of **[Amazon S3](https://s3.console.aws.amazon.com/s3/home)** and select the Bucket `cloudforge-media-upload-ntnhan19`.
 - Click **Add files**, select a sample multimedia file (e.g., `sample-audio.mp3` or `demo-video.mp4`) from your computer, and click **Upload**.
 
-![S3 Upload Success](/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/s3_upload_success.png)
+![S3 Upload Success](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/s3_upload_success.png)
 
 **Step 2: Verify and validate the message in the SQS queue**
 - Access the **[Amazon SQS](https://console.aws.amazon.com/sqs/v2/home#/queues)** service → Select the main task queue `cloudforge-media-task-queue`.
 - (Optional) In the **Details** section, click the **`► More`** toggle to expand it. You will see the **Messages available** metric increase (e.g., 1), indicating a new event has entered the queue.
 
-![SQS Queue Details](/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/sqs_queue_list.png)
+![SQS Queue Details](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/sqs_queue_list.png)
 
 - Click **Send and receive messages** → Scroll down to the *Receive messages* section and click **Poll for messages**.
 - Click on the ID of the newly appeared message to inspect the **Body** tab. The JSON payload sent by EventBridge must accurately contain:
   - The generated event: `ObjectCreated:Put`.
   - The original file name located in the `object.key` field.
 
-![SQS Message Received](/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/sqs_message_received.png)
+![SQS Message Received](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/sqs_message_received.png)
 
 #### 2. Validate Orchestration Process (Step Functions Workflow)
 The objective of this phase is to verify that EventBridge successfully triggered the Step Functions state machine and passed the correct S3 metadata.
@@ -40,13 +40,13 @@ The objective of this phase is to verify that EventBridge successfully triggered
 - You DO NOT NEED to click "Start execution". Since EventBridge is configured to point to Step Functions, the previous S3 upload action automatically spawned a new execution!
 - In the **Executions** tab, click on the most recent execution at the top.
 
-![Step Functions Executions](/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/step_functions_executions.png)
+![Step Functions Executions](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/step_functions_executions.png)
 
 **Step 2: Visually Monitor the Workflow (Graph View)**
 - The Graph View will now display our complete orchestration logic: `Launch AI Worker` followed by `Call Backend Webhook`.
 - The execution flow will transition to the `Launch AI Worker` state and intentionally fail (since we have not deployed the ECS Compute Cluster yet).
 
-![Step Functions Graph View](/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/step_functions_graph.png)
+![Step Functions Graph View](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.4-test-ingestion-flow/step_functions_graph.png)
 
 **Step 3: Analyze Input Data**
 - Click on the `Launch AI Worker` step on the Graph View.

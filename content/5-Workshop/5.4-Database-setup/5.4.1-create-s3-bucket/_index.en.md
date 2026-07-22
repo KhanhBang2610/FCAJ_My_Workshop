@@ -68,7 +68,7 @@ Because our frontend (hosted on Amplify or running locally) will directly access
 #### 4. Deployment Results
 The unstructured storage infrastructure (Object Storage) has been successfully established and is ready to act as the task provisioning source for the entire automated processing pipeline downstream.
 
-![S3 EventBridge Config](/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_eventbridge_enabled.png)
+![S3 EventBridge Config](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_eventbridge_enabled.png)
 
 ***
 

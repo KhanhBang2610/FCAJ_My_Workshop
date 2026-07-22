@@ -17,20 +17,20 @@ Truy cập dịch vụ **Amazon S3** trên AWS Console → Bấm **Create bucket
    - **AWS Region:** Chọn `ap-southeast-1` (Singapore) - Đảm bảo cùng phân vùng với hạ tầng mạng VPC nhằm tối ưu hóa độ trễ truyền tải.
    - **Bucket name:** Nhập `cloudforge-media-upload-<tên-của-bạn>` *(Lưu ý: Tên Bucket phải là định danh duy nhất tính trên toàn cục hệ thống AWS toàn cầu).*
 
-![General Configuration](/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_general_configuration.png)
+![General Configuration](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_general_configuration.png)
 
 2. **Phân đoạn Object Ownership:** Giữ nguyên thiết lập mặc định `ACLs disabled (recommended)` để quản lý quyền truy cập tập trung thông qua chính sách IAM.
 
-![S3 Object Ownership](/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_object_ownership.png)
+![S3 Object Ownership](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_object_ownership.png)
 
 3. **Phân đoạn Block Public Access settings for this bucket:** 
    - Tích chọn **Block all public access**. Đây là quy chuẩn bảo mật bắt buộc (Best Practice) nhằm cô lập hoàn toàn tài nguyên lưu trữ khỏi môi trường Internet công cộng, chỉ cho phép các dịch vụ thuộc tầng Backend truy xuất nội bộ.
 
-![S3 Block Public Access](/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_block_public_access.png)
+![S3 Block Public Access](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_block_public_access.png)
 
 4. **Phân đoạn Bucket Versioning & Default encryption:** Giữ nguyên các thông số cấu hình mặc định (Mã hóa tự động bằng cơ chế SSE-S3).
 
-![S3 Bucket Settings](/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_bucket_settings.png)
+![S3 Bucket Settings](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_bucket_settings.png)
 
 Cuộn xuống cuối trang biểu mẫu và bấm **Create bucket** để hoàn tất tiến trình.
 
@@ -46,7 +46,7 @@ Theo mặc định hệ thống, Amazon S3 sẽ không chủ động phát tán 
 **System Design Note:** Thao tác gạt trạng thái sang *On* cho phép Amazon S3 tự động đóng gói siêu dữ liệu dưới dạng JSON và đẩy thẳng vào trục Bus sự kiện mặc định của EventBridge bất cứ khi nào phát sinh hành động tải tệp tin lên (`ObjectCreated`).
 {{% /notice %}}
 
-![S3 EventBridge Config](/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_eventbridge_enabled.png)
+![S3 EventBridge Config](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_eventbridge_enabled.png)
 
 #### 3. Cấu hình CORS (Cross-Origin Resource Sharing)
 Do frontend của hệ thống (được lưu trữ trên Amplify hoặc chạy local) sẽ truy cập trực tiếp vào các file video/audio trên S3 thông qua Presigned URL, S3 cần được cấu hình CORS để cho phép trình duyệt tải nội dung đa phương tiện.
@@ -78,12 +78,12 @@ Do frontend của hệ thống (được lưu trữ trên Amplify hoặc chạy 
 ```
 4. Bấm **Save changes**. *(Lưu ý: Trong môi trường production thực tế, bạn nên thay dấu `*` ở AllowedOrigins bằng domain chính thức của frontend để bảo mật hơn).*
 
-![S3 CORS Config](/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_cors_enabled.png)
+![S3 CORS Config](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_cors_enabled.png)
 
 #### 4. Kết quả triển khai
 Hạ tầng lưu trữ phi cấu trúc (Object Storage) đã được thiết lập thành công và sẵn sàng đóng vai trò là nguồn cấp phát công việc cho toàn bộ pipeline xử lý tự động phía sau.
 
-![S3 EventBridge Config](/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_eventbridge_enabled.png)
+![S3 EventBridge Config](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.1-s3/s3_eventbridge_enabled.png)
 
 ***
 

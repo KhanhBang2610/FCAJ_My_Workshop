@@ -39,7 +39,7 @@ async def lifespan(app: FastAPI):
 
 Bất cứ khi nào ECS Task bắt đầu chạy (khi bạn triển khai ứng dụng ở chương sau), đoạn mã này sẽ tự động liên lạc với RDS và thực thi lệnh khởi tạo toàn bộ bảng (`ingest_jobs`, `assets`, `search`, v.v.).
 
-![Auto Migration Result](/images/5-Workshop/5.4-Database-setup/5.4.6-auto-migration/auto_migration.png)
+![Auto Migration Result](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.6-auto-migration/auto_migration.png)
 
 {{% notice tip %}}
 **Best Practice cho Production:** Mặc dù Auto-Migration cực kỳ tiện lợi cho các bài Lab, POC hoặc Workshop, nhưng khi triển khai ứng dụng ở quy mô Doanh nghiệp (Enterprise), các DevOps Engineer thường ưu tiên sử dụng **Phương án 1 hoặc 2** kết hợp các công cụ quản lý phiên bản Database (như Alembic, Flyway, Liquibase) để kiểm soát chặt chẽ những thay đổi trên Database thay vì tạo bảng tự động.

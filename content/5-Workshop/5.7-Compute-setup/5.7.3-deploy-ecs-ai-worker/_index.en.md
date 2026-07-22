@@ -31,7 +31,7 @@ This packaging and compilation process is executed directly at the AI Worker's d
    docker push 236320489525.dkr.ecr.ap-southeast-1.amazonaws.com/cloudforge-ai-worker:latest
    ```
 
-![ECR Worker Image Pushed](/images/5-Workshop/5.7-Compute-setup/5.7.3-deploy-ecs-ai-worker/ecr_worker_image_pushed.png)
+![ECR Worker Image Pushed](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.3-deploy-ecs-ai-worker/ecr_worker_image_pushed.png)
 
 #### 2. Establish Task Definition
 Due to the specific requirement of executing computational tasks related to Media data stream processing and running machine learning model algorithms, the AI Worker's virtual hardware configuration will be set higher than the standard API tier.
@@ -44,7 +44,7 @@ Due to the specific requirement of executing computational tasks related to Medi
    - **Task execution role:** Specify the `ecsTaskExecutionRole` role, which possesses attached policies for Secrets Manager access to load system environment variables.
    - **Task role (Crucial):** Select EXACTLY the IAM Role **`ECS-Worker-TaskRole`** which has been pre-granted core security permissions including: Interacting with Amazon SQS queues, processing files on Amazon S3, updating the Database, and crucially, calling AI services like Amazon Bedrock and Transcribe.
 
-![Worker Task Role](/images/5-Workshop/5.7-Compute-setup/5.7.3-deploy-ecs-ai-worker/worker_task_role.png)
+![Worker Task Role](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.3-deploy-ecs-ai-worker/worker_task_role.png)
 4. **Container configuration:**
    - **Container name:** Define the name `worker-container`.
    - **Image URI:** Paste the exact link from ECR: `236320489525.dkr.ecr.ap-southeast-1.amazonaws.com/cloudforge-ai-worker:latest`.
@@ -57,10 +57,10 @@ Due to the specific requirement of executing computational tasks related to Medi
      - `PYTHONPATH`: `/app`
      - `STORAGE_BACKEND`: `s3`
 
-![Worker Environment](/images/5-Workshop/5.7-Compute-setup/5.7.3-deploy-ecs-ai-worker/worker_environment.png)
+![Worker Environment](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.3-deploy-ecs-ai-worker/worker_environment.png)
 6. Click **Create** to save the V1 configuration.
 
-![Worker Task Definition](/images/5-Workshop/5.7-Compute-setup/5.7.3-deploy-ecs-ai-worker/worker_task_definition.png)
+![Worker Task Definition](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.3-deploy-ecs-ai-worker/worker_task_definition.png)
 
 #### 3. AI Worker Execution (Event-Driven)
 

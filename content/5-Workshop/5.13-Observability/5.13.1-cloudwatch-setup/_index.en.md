@@ -37,7 +37,7 @@ The `logConfiguration` block is explicitly declared within the JSON format of th
 
 Subsequent to the application update via the CI/CD pipeline, the Backend source code executing within the container will autonomously redirect all log data externally. By navigating to the `/ecs/cloudforge-backend-task` Log Group, administrators can open the **Log streams** to monitor the entire application initialization process in Real-time.
 
-![CloudWatch Log Stream](/images/5-Workshop/5.13-Observability/5.13.1-cloudwatch-setup/5.13.1-log-stream.png)
+![CloudWatch Log Stream](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.1-cloudwatch-setup/5.13.1-log-stream.png)
 
 #### Step 3: Establish a CloudWatch Alarm for CPU Alerts
 To proactively mitigate network congestion or system overload scenarios before the service crashes, the project team establishes an alerting system (Alarm) that measures the CPU consumption of the ECS Service.
@@ -54,7 +54,7 @@ To proactively mitigate network congestion or system overload scenarios before t
 6. Click **Next**. At the Configure actions phase, opt to send a notification to a dedicated Amazon SNS Topic (e.g., `DevOps-Alerts`) to autonomously forward alert emails to the operations team's inbox.
 7. Designate the Alarm name as `ECS-High-CPU-Alert` and click **Create alarm**.
 
-![CloudWatch CPU Alarm](/images/5-Workshop/5.13-Observability/5.13.1-cloudwatch-setup/5.13.1-cpu-alarm.png)
+![CloudWatch CPU Alarm](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.1-cloudwatch-setup/5.13.1-cpu-alarm.png)
 
 ***
 

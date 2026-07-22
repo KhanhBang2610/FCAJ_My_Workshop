@@ -21,7 +21,7 @@ From the AWS Console, navigate to the **Amazon SQS** service → **Queues** → 
 - **Configuration & Encryption & Access policy sections:** Keep the system's default configurations.
 - **Dead-letter queue - Optional section:** Default to `Disabled` (the DLQ does not need to point to another DLQ).
 
-![Create DLQ](/images/5-Workshop/5.6-Ingestion-workflow/5.6.1-create-sqs-queue/create_dlq.png)
+![Create DLQ](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.1-create-sqs-queue/create_dlq.png)
 
 Finally, scroll down to the bottom right corner and click **Create queue** to complete initialization.
 
@@ -44,16 +44,16 @@ Once the DLQ is ready, return to the Queues list interface and click **Create qu
   - **Choose queue:** Select the exact `cloudforge-media-dlq` queue initialized in step 1.
   - **Maximum receives:** Set the value to `3`. (If a Media task is processed with errors by the Worker more than 3 times, the message will automatically be moved to the DLQ for manual inspection by the engineering team).
 
-![Configure Task Queue](/images/5-Workshop/5.6-Ingestion-workflow/5.6.1-create-sqs-queue/configure_task_queue1.png)
+![Configure Task Queue](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.1-create-sqs-queue/configure_task_queue1.png)
 
-![Configure Task Queue](/images/5-Workshop/5.6-Ingestion-workflow/5.6.1-create-sqs-queue/configure_task_queue2.png)
+![Configure Task Queue](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.1-create-sqs-queue/configure_task_queue2.png)
 
 Finally, double-check all configuration information and click the **Create queue** button.
 
 #### 3. Deployment Results
 Upon successful initialization, the system will allocate a unique URL identifier for each queue. This URL string will be recorded to be configured into the environment variables of the application tier.
 
-![SQS Queue Created](/images/5-Workshop/5.6-Ingestion-workflow/5.6.1-create-sqs-queue/sqs_queue_created.png)
+![SQS Queue Created](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.1-create-sqs-queue/sqs_queue_created.png)
 
 ***
 

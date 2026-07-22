@@ -20,13 +20,13 @@ Chúng ta tiến hành khởi tạo hai kho lưu trữ riêng biệt nhằm phâ
    - **Encryption settings:** Giữ nguyên mặc định **AES-256**.
    - **Image scanning settings:** Tùy chọn này hiện đã được AWS đánh dấu là *deprecated* (lỗi thời) nhằm chuyển hướng sang kiến trúc quét lỗ hổng bảo mật tập trung bằng Amazon Inspector. Bỏ qua cấu hình này.
 
-![ECR Config](/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecr_config.png)
+![ECR Config](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecr_config.png)
 3. Cuộn xuống cuối trang và bấm **Create repository**.
 4. Lặp lại toàn bộ chu trình trên để tạo thêm kho lưu trữ thứ hai với tên định danh `cloudforge-ai-worker`.
 
 Sau khi hoàn tất, ghi nhận lại chuỗi đường dẫn **URI** của cả hai kho lưu trữ (ví dụ: `236320489525.dkr.ecr.ap-southeast-1.amazonaws.com/cloudforge-backend`) để phục vụ cho công đoạn đóng gói và đẩy mã nguồn lên Cloud ở các bài học tiếp theo.
 
-![ECR Repositories Created](/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecr_repositories_created.png)
+![ECR Repositories Created](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecr_repositories_created.png)
 
 #### 2. Khởi tạo Amazon ECS Cluster
 1. Truy cập dịch vụ **Amazon ECS** trên AWS Console → Chọn **Clusters** tại thanh điều hướng bên trái → Bấm **Create cluster**.
@@ -34,10 +34,10 @@ Sau khi hoàn tất, ghi nhận lại chuỗi đường dẫn **URI** của cả
 3. **Infrastructure:** Đảm bảo tùy chọn **AWS Fargate (serverless)** đang được chọn mặc định. Hệ thống hoàn toàn không sử dụng các thực thể EC2 instances nhằm loại bỏ công tác vận hành hệ điều hành.
 4. **Monitoring (Tùy chọn nâng cao):** Chọn **Use Container Insights** để kích hoạt tính năng tự động đẩy các chỉ số chuyên sâu về hiệu năng phần cứng (vCPU, Memory Utilization) lên hệ thống giám sát Amazon CloudWatch.
 
-![ECS Cluster Config](/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecs_cluster_config.png)
+![ECS Cluster Config](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecs_cluster_config.png)
 5. Bấm **Create** và đợi hệ thống phê duyệt khởi tạo chu trình trong vài giây.
 
-![ECS Cluster Created](/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecs_cluster_created.png)
+![ECS Cluster Created](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecs_cluster_created.png)
 
 {{% notice tip %}}
 **Fargate Cost Optimization:** Vì Amazon ECS Cluster khi chạy ở chế độ Fargate chỉ đóng vai trò là một nhóm quản lý logic, bạn **hoàn toàn không tốn bất kỳ chi phí nào** khi duy trì một Cluster trống. Chi phí hạ tầng Compute sẽ chỉ bắt đầu được tính toán dựa trên lượng vCPU và dung lượng RAM thực tế tiêu thụ theo giây khi các tác vụ (Tasks) chính thức chuyển sang trạng thái hoạt động (`RUNNING`).

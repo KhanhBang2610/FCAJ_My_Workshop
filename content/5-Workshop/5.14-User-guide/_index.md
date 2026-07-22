@@ -16,28 +16,28 @@ Chương này trình diễn cách nền tảng Smart Media Analytics vận hành
 3. Một **Mã xác nhận (Confirmation Code)** được Amazon Cognito gửi tự động và bảo mật đến email để xác thực.
 4. Sau khi xác thực thành công, thao tác đăng nhập được thực hiện để truy cập vào bảng điều khiển (Dashboard) chính.
 
-![Giao diện Đăng nhập Cognito](/images/5-Workshop/5.14-User-guide/5.14-login-ui.png)
+![Giao diện Đăng nhập Cognito](/FCAJ_My_Workshop/images/5-Workshop/5.14-User-guide/5.14-login-ui.png)
 
 ### 2. Tải lên Video (Ingestion)
 1. Phần **Upload** được truy cập để tiến hành chọn một tệp video mẫu.
 2. Hệ thống Frontend tiến hành upload trực tiếp file lên bucket S3 thông qua cơ chế Pre-signed URL bảo mật, kèm theo thanh tiến trình trực quan.
 
-![Tiến trình Upload Video](/images/5-Workshop/5.14-User-guide/5.14-upload-progress.png)
+![Tiến trình Upload Video](/FCAJ_My_Workshop/images/5-Workshop/5.14-User-guide/5.14-upload-progress.png)
 
 3. Khi quá trình upload kết thúc, video xuất hiện trong thư viện với trạng thái **Processing (Đang xử lý)**. Ở phía sau, EventBridge kích hoạt Step Functions, và cụm ECS AI Worker tiến hành trích xuất và phân tích khung hình video.
 
-![Trạng thái Đang Xử lý](/images/5-Workshop/5.14-User-guide/5.14-processing-status.png)
+![Trạng thái Đang Xử lý](/FCAJ_My_Workshop/images/5-Workshop/5.14-User-guide/5.14-processing-status.png)
 
 4. Sau khi AI pipeline hoàn thành việc phân tích và đánh chỉ mục (indexing), trạng thái tự động chuyển sang **Completed** và hiển thị đầy đủ thông tin media.
 
-![Trạng thái Đã xử lý](/images/5-Workshop/5.14-User-guide/5.14-completed-status.png)
+![Trạng thái Đã xử lý](/FCAJ_My_Workshop/images/5-Workshop/5.14-User-guide/5.14-completed-status.png)
 
 ### 3. Chi tiết Media & Tính năng cho Editor
 1. Khi bấm chọn một video đã được xử lý hoàn tất, giao diện Chi tiết Asset (Asset Detail) được mở ra.
 2. Một giao diện toàn diện dành cho Editor được cung cấp, nổi bật với hệ thống **Phân loại Tag (Tag Classification)** tự động dựa trên kết quả phân tích AI.
 3. Toàn bộ **Bản dịch thoại (Transcript)** của video cũng được hiển thị chi tiết, giúp quá trình theo dõi và kiểm duyệt nội dung diễn ra nhanh chóng.
 
-![Chi tiết Asset, Tag và Transcript](/images/5-Workshop/5.14-User-guide/5.14-asset-detail.png)
+![Chi tiết Asset, Tag và Transcript](/FCAJ_My_Workshop/images/5-Workshop/5.14-User-guide/5.14-asset-detail.png)
 
 ### 4. Tìm kiếm Ngữ nghĩa (Search in Video)
 1. Bên trong giao diện Asset Detail, tính năng **Search in Video** cho phép tìm kiếm ngữ nghĩa chuyên sâu ngay bên trong nội dung của video đó.
@@ -45,7 +45,7 @@ Chương này trình diễn cách nền tảng Smart Media Analytics vận hành
 3. Hệ thống trả về chính xác các phân cảnh (scene) kèm theo **mốc thời gian (timestamp)** khớp với miêu tả.
 4. Khi một phân cảnh được click chọn, trình phát (player) sẽ tự động bật video ngay tại đúng thời điểm đó.
 
-![Kết quả Search in Video](/images/5-Workshop/5.14-User-guide/5.14-search-in-video.png)
+![Kết quả Search in Video](/FCAJ_My_Workshop/images/5-Workshop/5.14-User-guide/5.14-search-in-video.png)
 
 ---
 

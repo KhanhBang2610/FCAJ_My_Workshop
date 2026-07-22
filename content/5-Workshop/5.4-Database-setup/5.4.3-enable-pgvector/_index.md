@@ -44,7 +44,7 @@ SELECT extname, extversion FROM pg_extension WHERE extname = 'vector';
 
 Nếu kết quả trả về hiển thị `vector` kèm theo phiên bản (ví dụ: `0.8.1`), xin chúc mừng! Cơ sở dữ liệu của hệ thống đã hoàn toàn sẵn sàng để lưu trữ các chuỗi đa chiều do Amazon Titan tạo ra.
 
-![Enable pgvector](/images/5-Workshop/5.4-Database-setup/5.4.3-enable-pgvector/enable_pgvector.png)
+![Enable pgvector](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.3-enable-pgvector/enable_pgvector.png)
 
 ***
 

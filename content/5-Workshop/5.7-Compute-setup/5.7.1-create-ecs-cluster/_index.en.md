@@ -20,13 +20,13 @@ We will initialize two separate repositories to completely isolate the source co
    - **Encryption settings:** Keep the default **AES-256**.
    - **Image scanning settings:** This option is currently marked as *deprecated* by AWS in favor of centralized vulnerability scanning with Amazon Inspector. Skip this configuration.
 
-![ECR Config](/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecr_config.png)
+![ECR Config](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecr_config.png)
 3. Scroll to the bottom of the page and click **Create repository**.
 4. Repeat the entire cycle above to create a second repository named `cloudforge-ai-worker`.
 
 Once complete, record the **URI** paths of both repositories (e.g., `236320489525.dkr.ecr.ap-southeast-1.amazonaws.com/cloudforge-backend`) to serve the packaging and source code pushing process to the Cloud in subsequent lessons.
 
-![ECR Repositories Created](/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecr_repositories_created.png)
+![ECR Repositories Created](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecr_repositories_created.png)
 
 #### 2. Initialize Amazon ECS Cluster
 1. Access the **Amazon ECS** service on the AWS Console → Select **Clusters** in the left navigation bar → Click **Create cluster**.
@@ -34,10 +34,10 @@ Once complete, record the **URI** paths of both repositories (e.g., `23632048952
 3. **Infrastructure:** Ensure the **AWS Fargate (serverless)** option is selected by default. The system completely avoids using EC2 instance entities to eliminate operating system operational tasks.
 4. **Monitoring (Advanced option):** Select **Use Container Insights** to enable automatically pushing in-depth hardware performance metrics (vCPU, Memory Utilization) to the Amazon CloudWatch monitoring system.
 
-![ECS Cluster Config](/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecs_cluster_config.png)
+![ECS Cluster Config](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecs_cluster_config.png)
 5. Click **Create** and wait a few seconds for the system to approve the initialization cycle.
 
-![ECS Cluster Created](/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecs_cluster_created.png)
+![ECS Cluster Created](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.1-create-ecs-cluster/ecs_cluster_created.png)
 
 {{% notice tip %}}
 **Fargate Cost Optimization:** Because the Amazon ECS Cluster running in Fargate mode merely acts as a logical management group, you **incur absolutely no costs** when maintaining an empty Cluster. Compute infrastructure costs will only begin to be calculated based on the actual vCPU and RAM capacity consumed per second when tasks officially transition to the active (`RUNNING`) state.

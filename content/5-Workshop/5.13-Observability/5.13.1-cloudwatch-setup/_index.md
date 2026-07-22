@@ -37,7 +37,7 @@ Khối cấu hình `logConfiguration` được khai báo cụ thể trong địn
 
 Sau khi ứng dụng được cập nhật thông qua luồng CI/CD, mã nguồn Backend chạy trong container sẽ tự động chuyển hướng toàn bộ dữ liệu log ra ngoài. Khi truy cập vào Log Group `/ecs/cloudforge-backend-task`, quản trị viên có thể mở các **Log streams** để theo dõi toàn bộ tiến trình khởi chạy ứng dụng theo thời gian thực (Real-time).
 
-![CloudWatch Log Stream](/images/5-Workshop/5.13-Observability/5.13.1-cloudwatch-setup/5.13.1-log-stream.png)
+![CloudWatch Log Stream](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.1-cloudwatch-setup/5.13.1-log-stream.png)
 
 #### Bước 3: Thiết lập CloudWatch Alarm cảnh báo CPU
 Để chủ động xử lý các tình huống nghẽn mạng hoặc quá tải hệ thống trước khi dịch vụ rơi vào trạng thái sập (Crash), nhóm dự án thiết lập một hệ thống cảnh báo (Alarm) đo lường mức độ tiêu thụ CPU của ECS Service.
@@ -54,7 +54,7 @@ Sau khi ứng dụng được cập nhật thông qua luồng CI/CD, mã nguồn
 6. Bấm **Next**. Tại bước Configure actions, chọn gửi thông báo (Send notification) đến một Amazon SNS Topic chuyên trách (Ví dụ: `DevOps-Alerts`) để tự động chuyển tiếp email cảnh báo về hộp thư của đội ngũ vận hành.
 7. Đặt tên cho Alarm là `ECS-High-CPU-Alert` và nhấn **Create alarm**.
 
-![CloudWatch CPU Alarm](/images/5-Workshop/5.13-Observability/5.13.1-cloudwatch-setup/5.13.1-cpu-alarm.png)
+![CloudWatch CPU Alarm](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.1-cloudwatch-setup/5.13.1-cpu-alarm.png)
 
 ***
 

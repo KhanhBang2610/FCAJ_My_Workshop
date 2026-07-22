@@ -83,7 +83,7 @@ Kết quả trả về ở thời điểm hiện tại (khi chưa có video nào
 }
 ```
 
-![Search API Test](/images/5-Workshop/5.10-Semantic-search/5.10.2-vector-search-pgvector/search_api_test.png)
+![Search API Test](/FCAJ_My_Workshop/images/5-Workshop/5.10-Semantic-search/5.10.2-vector-search-pgvector/search_api_test.png)
 
 {{% notice tip %}}
 **Tối ưu hóa Hiệu suất (Performance Optimization):** Đối với các tập dữ liệu có quy mô lớn, việc quét toàn bộ bảng (Exact Nearest Neighbor Search) sẽ làm suy giảm hiệu suất nghiêm trọng. Nhóm dự án đã thiết lập chỉ mục **HNSW** (Hierarchical Navigable Small World) trên cột `embedding` ở Chương 5.4, giúp tăng tốc độ tìm kiếm (Approximate Nearest Neighbor) lên gấp nhiều lần với độ chính xác xấp xỉ hoàn hảo, đảm bảo độ trễ truy vấn (Latency) luôn ở mức thấp.

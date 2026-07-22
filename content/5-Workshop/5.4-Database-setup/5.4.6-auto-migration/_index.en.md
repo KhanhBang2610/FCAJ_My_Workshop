@@ -39,7 +39,7 @@ async def lifespan(app: FastAPI):
 
 Whenever the ECS Task starts (when you deploy the application in the next chapter), this code will automatically contact RDS and execute the initialization of all tables (`ingest_jobs`, `assets`, `search`, etc.).
 
-![Auto Migration Result](/images/5-Workshop/5.4-Database-setup/5.4.6-auto-migration/auto_migration.png)
+![Auto Migration Result](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.6-auto-migration/auto_migration.png)
 
 {{% notice tip %}}
 **Security Best Practice for Production:** Although Auto-Migration is extremely convenient for Labs, POCs, or Workshops, when deploying Enterprise-scale applications, DevOps Engineers prefer **Approaches 1 or 2** combined with Database version control tools (like Alembic, Flyway, Liquibase) to strictly control Database changes rather than creating tables automatically.

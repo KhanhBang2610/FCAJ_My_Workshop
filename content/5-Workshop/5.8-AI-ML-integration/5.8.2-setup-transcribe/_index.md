@@ -20,7 +20,7 @@ Không giống như Amazon Bedrock yêu cầu cơ chế tự động kích hoạ
 4. **Kiểm tra trạng thái bất đồng bộ (Polling):** Do tiến trình chuyển đổi giọng nói cần thời gian tính toán và diễn ra bất đồng bộ, AI Worker sẽ liên tục thực hiện vòng lặp thăm dò (Poll) qua API `GetTranscriptionJob` để cập nhật trạng thái xử lý của hệ thống.
 5. **Đồng bộ kết quả:** Ngay khi trạng thái chuyển sang nhãn `COMPLETED`, Amazon Transcribe sẽ xuất ra một tệp JSON chứa toàn bộ văn bản (Transcript) đã được bóc tách, đi kèm mốc thời gian chi tiết (Timestamps) của từng từ ngữ.
 
-![Transcribe Flow](/images/5-Workshop/5.8-AI-ML-integration/5.8.2-setup-transcribe/transcribe_flow.png)
+![Transcribe Flow](/FCAJ_My_Workshop/images/5-Workshop/5.8-AI-ML-integration/5.8.2-setup-transcribe/transcribe_flow.png)
 
 #### Yêu cầu quyền hạn hạ tầng (IAM Role Permissions)
 Để quy trình tự động hóa trên chạy trôi chảy không gặp lỗi phân quyền, **ECS Task Role** của dịch vụ AI Worker bắt buộc phải được đính kèm các chính sách quyền hạn sau:

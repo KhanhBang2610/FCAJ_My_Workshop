@@ -22,7 +22,7 @@ Trước khi GitHub Actions có thể đẩy Image lên, cần tạo một kho l
 
 Lưu ý và sao chép **URI** của Repository vừa tạo (Ví dụ: `236320489525.dkr.ecr.ap-southeast-1.amazonaws.com/cloudforge-backend`).
 
-![Create ECR Repository](/images/5-Workshop/5.12-CICD/5.12.2-ecr-push/5.12.2-create-ecr.png)
+![Create ECR Repository](/FCAJ_My_Workshop/images/5-Workshop/5.12-CICD/5.12.2-ecr-push/5.12.2-create-ecr.png)
 
 #### Bước 2: Thiết lập Workflow GitHub Actions
 Nhóm dự án tạo một tệp định nghĩa Workflow tại thư mục gốc của dự án trên VS Code: `.github/workflows/deploy.yml`.
@@ -85,7 +85,7 @@ Sẽ thấy một tiến trình mang tên `Deploy Backend to ECR` đang được
 
 Truy cập lại vào kho lưu trữ `cloudforge-backend` trên Amazon ECR Console, sẽ thấy một Docker Image mới tinh vừa được đẩy lên, gắn nhãn (tag) bằng chuỗi mã SHA của commit.
 
-![GitHub Actions Success](/images/5-Workshop/5.12-CICD/5.12.2-ecr-push/5.12.2-actions-success.png)
+![GitHub Actions Success](/FCAJ_My_Workshop/images/5-Workshop/5.12-CICD/5.12.2-ecr-push/5.12.2-actions-success.png)
 
 ***
 

@@ -23,7 +23,7 @@ Trong phần này, tiến hành tiến hành tạo 3 Security Groups cốt lõi 
 7. **Outbound Rules:** Giữ nguyên Default (Cho phép tất cả).
 8. Bấm **Create security group**.
 
-![ALB Security Group](/images/5-Workshop/5.3-Network-vpc/5.3.4-security-groups/alb_sg.png)
+![ALB Security Group](/FCAJ_My_Workshop/images/5-Workshop/5.3-Network-vpc/5.3.4-security-groups/alb_sg.png)
 
 #### 2. ECS-App-SG (Tường lửa cho Backend & AI Worker)
 **Mục đích:** Chỉ cho phép nhận requests đã được lọc qua Load Balancer và cho phép các containers giao tiếp nội bộ với nhau.
@@ -32,7 +32,7 @@ Trong phần này, tiến hành tiến hành tạo 3 Security Groups cốt lõi 
    - Type: `Custom TCP` | Port: `8000` (Cổng Backend API) | Source: Gắn ID của `cloudforge-alb-sg`. *(Bảo vệ API, chỉ nhận traffic từ ALB)*.
    - Type: `All TCP` | Port: `0-65535` | Source: Gắn ID của chính `cloudforge-ecs-app-sg`. *(Cho phép các container nội bộ gọi chéo nhau)*.
 
-![ECS App Security Group](/images/5-Workshop/5.3-Network-vpc/5.3.4-security-groups/ecs_app_sg.png)
+![ECS App Security Group](/FCAJ_My_Workshop/images/5-Workshop/5.3-Network-vpc/5.3.4-security-groups/ecs_app_sg.png)
 
 #### 3. DB-Redis-SG (Tường lửa cho Database & Cache)
 **Mục đích:** Khóa chặt lớp Dữ liệu (Data tier), chỉ cho phép các máy chủ xử lý (ECS containers) truy cập vào để đọc/ghi dữ liệu.
@@ -41,7 +41,7 @@ Trong phần này, tiến hành tiến hành tạo 3 Security Groups cốt lõi 
    - Type: `PostgreSQL` | Port: `5432` | Source: Gắn ID của `cloudforge-ecs-app-sg`.
    - Type: `Custom TCP` | Port: `6379` (Cổng của Redis) | Source: Gắn ID của `cloudforge-ecs-app-sg`.
 
-![DB Security Group](/images/5-Workshop/5.3-Network-vpc/5.3.4-security-groups/sg_db_redis.png)
+![DB Security Group](/FCAJ_My_Workshop/images/5-Workshop/5.3-Network-vpc/5.3.4-security-groups/sg_db_redis.png)
 
 ***
 

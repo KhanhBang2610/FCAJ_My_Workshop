@@ -21,7 +21,7 @@ Trong thế giới của Trí tuệ Nhân tạo, "Embedding" là quá trình mã
 3. **Tiếp nhận mảng Vector:** Bedrock tính toán và phản hồi lại bằng một mảng dữ liệu (Array) chứa hàng ngàn giá trị số thực (ví dụ: `[0.012, -0.453, 0.887, ...]`). Đây chính là "chữ ký ngữ nghĩa" đặc trưng của đoạn văn bản đó.
 4. **Lưu trữ tri thức:** Mảng Vector này sau đó sẽ được đưa vào Cơ sở dữ liệu Vector (PostgreSQL kết hợp `pgvector`) cùng với các siêu dữ liệu (Metadata) như ID của video và mốc thời gian.
 
-![Embeddings Flow](/images/5-Workshop/5.8-AI-ML-integration/5.8.3-test-embeddings/embeddings_flow.png)
+![Embeddings Flow](/FCAJ_My_Workshop/images/5-Workshop/5.8-AI-ML-integration/5.8.3-test-embeddings/embeddings_flow.png)
 
 #### Yêu cầu quyền hạn hạ tầng (IAM Role Permissions)
 Để tiến trình giao tiếp với Amazon Bedrock diễn ra trơn tru mà không bị chặn, **ECS Task Role** của AI Worker đã được cấp sẵn chính sách quyền hạn:

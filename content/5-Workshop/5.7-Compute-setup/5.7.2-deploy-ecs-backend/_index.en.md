@@ -26,7 +26,7 @@ To transfer the local source code to the Cloud infrastructure, we compile the ap
    docker push 236320489525.dkr.ecr.ap-southeast-1.amazonaws.com/cloudforge-backend:latest
    ```
 
-![ECR Image Pushed](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/ecr_image_pushed.png)
+![ECR Image Pushed](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/ecr_image_pushed.png)
 
 #### 2. Initialize Application Load Balancer (ALB)
 Since the Backend application's Containers will be completely isolated within the Private Subnet zone for security, we need to establish an Application Load Balancer (ALB) situated in the Public Subnets zone to act as an intermediary shield receiving and distributing traffic from the Internet.
@@ -39,7 +39,7 @@ Since the Backend application's Containers will be completely isolated within th
 5. **VPC:** Select the correct `cloudforge-vpc`.
 6. In the **Health checks** section, change the **Health check path** from `/` to `/health` (because the Backend exposes its health status there). Click **Next** → **Create target group** (Skip the manual IP registration step because the ECS Service will manage this flow automatically).
 
-![Target Group Created](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/target_group_created.png)
+![Target Group Created](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/target_group_created.png)
 
 **Step 2: Configure Load Balancer**
 1. On the left EC2 menu, select **Load Balancers** → Click **Create load balancer** → Select **Application Load Balancer**.
@@ -51,13 +51,13 @@ Since the Backend application's Containers will be completely isolated within th
 5. **Security groups:** Select the **`cloudforge-alb-sg`** Security Group (This SG was pre-configured to allow receiving HTTP/HTTPS traffic from any Internet source).
 6. **Listeners and routing:** Under HTTP Port 80, for the Default action, select Forward to the `cloudforge-backend-tg` Target Group created in Step 1.
 
-![ALB Routing Config](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/alb_routing_config1.png)
+![ALB Routing Config](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/alb_routing_config1.png)
 
-![ALB Routing Config](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/alb_routing_config2.png)
+![ALB Routing Config](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/alb_routing_config2.png)
 
 7. Click **Create load balancer**.
 
-![ALB Created](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/alb_created.png)
+![ALB Created](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/alb_created.png)
 
 #### 3. Establish Task Definition
 The Task Definition acts as an architectural blueprint detailing the hardware limits, the Docker image used, and the security parameters of the application.
@@ -81,12 +81,12 @@ The Task Definition acts as an architectural blueprint detailing the hardware li
      - `REDIS_URL`: `redis://master.cloudforge-redis...` *(Or `rediss://` if you have In-Transit Encryption enabled in ElastiCache)*
      - `STORAGE_BACKEND`: `s3`
 
-![Task Def Environment 1](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_def_environment1.png)
-![Task Def Environment 2](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_def_environment2.png)
-![Task Def Environment 3](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_def_environment3.png)
+![Task Def Environment 1](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_def_environment1.png)
+![Task Def Environment 2](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_def_environment2.png)
+![Task Def Environment 3](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_def_environment3.png)
 6. Click **Create**.
 
-![Task Definition Created](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_definition_created.png)
+![Task Definition Created](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/task_definition_created.png)
 
 #### 4. Deploy ECS Service Operations
 The Service plays a coordinating role, ensuring the continuous maintenance of a stable number of active Containers and automatically connecting them to the ALB load balancer.
@@ -112,9 +112,9 @@ The Service plays a coordinating role, ensuring the continuous maintenance of a 
    - **Target group:** Select **Use an existing target group** and point to `cloudforge-backend-tg`.
 8. Click **Create** to proceed with the deployment. This process may take 2-3 minutes for the Service status to transition to `Running`.
 
-![ECS Service Networking](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/ecs_service_networking.png)
+![ECS Service Networking](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/ecs_service_networking.png)
 
-![ECS Service Success](/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/ecs_service_success.png)
+![ECS Service Success](/FCAJ_My_Workshop/images/5-Workshop/5.7-Compute-setup/5.7.2-deploy-ecs-backend/ecs_service_success.png)
 
 {{% notice tip %}}
 **Architectural Note (Isolate by Design):** With this decoupled design model, the Backend API system possesses two strict layers of protection. All potential attack traffic from the Internet will be blocked or filtered at the ALB load balancer located in the Public Subnet zone (Can be additionally wrapped with AWS WAF). The clean data stream is then silently routed through the internal network to enter the Containers nestled deep within the Private Subnet network zone, completely eliminating the risk of direct vulnerability exploitation from the external environment.

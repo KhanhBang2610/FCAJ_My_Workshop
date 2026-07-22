@@ -83,7 +83,7 @@ The returned result at this stage (since no video has been fully processed yet) 
 }
 ```
 
-![Search API Test](/images/5-Workshop/5.10-Semantic-search/5.10.2-vector-search-pgvector/search_api_test.png)
+![Search API Test](/FCAJ_My_Workshop/images/5-Workshop/5.10-Semantic-search/5.10.2-vector-search-pgvector/search_api_test.png)
 
 {{% notice tip %}}
 **Performance Optimization:** For large-scale datasets, performing a full table scan (Exact Nearest Neighbor Search) leads to severe performance degradation. The project team configured an **HNSW** (Hierarchical Navigable Small World) index on the `embedding` column during Chapter 5.4, substantially accelerating search speeds (Approximate Nearest Neighbor) with near-perfect accuracy, ensuring query latency remains consistently low.

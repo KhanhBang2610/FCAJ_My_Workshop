@@ -33,28 +33,28 @@ Truy cập dịch vụ **Amazon EventBridge** → **Rules** → **Create rule**.
   }
   ```
 
-  ![EventBridge Event Pattern](/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_event_pattern.png)
+  ![EventBridge Event Pattern](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_event_pattern.png)
 
 **Bước 2: Thiết lập Target (Đích đến)**
 - Tại thanh công cụ bên trái, tìm kiếm dịch vụ **SQS** (hoặc mở danh mục AWS Services), kéo khối **Amazon SQS** thả vào khu vực **Targets**.
 - Tại bảng cấu hình Target, mục *Queue*, chọn đúng hàng đợi **`cloudforge-media-task-queue`** đã khởi tạo ở phân đoạn trước.
 - *(Lưu ý: Tiến hành thêm Target thứ 2 là AWS Step Functions ở bài tiếp theo sau khi khởi tạo xong).*
 
-![EventBridge Target Setup](/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_target.png)
+![EventBridge Target Setup](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_target.png)
 
 **Bước 3: Định danh quy tắc**
 - Chuyển sang thẻ **Configure** ở thanh điều hướng.
 - **Rule name:** Cấp tên quy tắc là `cloudforge-s3-to-sqs-rule`.
 - **Activation:** Đảm bảo nút kích hoạt đang ở trạng thái **Active**.
 
-![EventBridge Rule Naming](/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_rule_naming.png)
+![EventBridge Rule Naming](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_rule_naming.png)
 
 Cuối cùng, kiểm tra lại sơ đồ định tuyến và bấm **Create** ở góc trên cùng bên phải để hoàn tất quá trình triển khai.
 
 #### 2. Kết quả triển khai Event Routing
 Khi quy tắc được tạo thành công và kích hoạt, đường ống dữ liệu bất đồng bộ (Asynchronous Data Pipeline) đã chính thức được thiết lập thông suốt từ S3 Storage đi qua EventBridge và tập kết an toàn tại SQS Queue.
 
-![EventBridge Rule Created](/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_rule_created.png)
+![EventBridge Rule Created](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_rule_created.png)
 
 {{% notice tip %}}
 **System Design Note (Kiến trúc phi kết nối):** Việc tách rời (Decoupling) các thành phần bằng EventBridge giúp lớp Frontend không cần quan tâm đến trạng thái của hệ thống Backend. Người dùng chỉ việc tải file lên S3 và nhận phản hồi thành công ngay lập tức. Mọi tác vụ nặng phía sau đã có EventBridge và SQS điều phối, loại bỏ hoàn toàn rủi ro tắc nghẽn (bottleneck) hoặc quá tải (timeout) tại cổng giao tiếp API.

@@ -21,7 +21,7 @@ Bài viết này hướng dẫn cách cấu hình chạy X-Ray Daemon theo mô h
 4. Tìm kiếm và tick chọn chính sách **`AWSXRayDaemonWriteAccess`**.
 5. Bấm **Add permissions**.
 
-![IAM Task Role](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/iam_task_role.png)
+![IAM Task Role](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/iam_task_role.png)
 
 #### Bước 2: Thêm X-Ray Daemon Sidecar vào Task Definition
 Trên môi trường ECS Fargate, phương pháp chuẩn nhất để chạy X-Ray là mô hình **Sidecar**: Chạy một container phụ (Daemon) song song với container chính (Backend) bên trong cùng một Task. Daemon này sẽ lắng nghe, thu thập các gói dữ liệu Trace từ ứng dụng và đẩy lên AWS thông qua giao thức UDP.
@@ -34,7 +34,7 @@ Tại giao diện tạo Revision mới, giữ nguyên các cấu hình của Con
 *   **Image URI**: `public.ecr.aws/xray/aws-xray-daemon:latest`
 *   **Essential container**: Yes
 
-![X-Ray Container Setup](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_container_setup.png)
+![X-Ray Container Setup](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_container_setup.png)
 
 **Port mappings:**
 *   **Container port**: `2000`
@@ -43,12 +43,12 @@ Tại giao diện tạo Revision mới, giữ nguyên các cấu hình của Con
 **Resource allocation limits:**
 *   **Memory hard limit**: `256` *(Cấp 256 MB RAM cho Daemon hoạt động)*.
 
-![X-Ray Port & Resource Setup](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_port_resource.png)
+![X-Ray Port & Resource Setup](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_port_resource.png)
 
 **Log collection:**
 *   Đánh dấu chọn **Use log collection** để đẩy log của X-Ray Daemon lên CloudWatch, giúp dễ dàng debug nếu Daemon gặp lỗi khởi động.
 
-![X-Ray Log Collection](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_log_collection.png)
+![X-Ray Log Collection](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_log_collection.png)
 
 Sau khi điền đủ thông tin, cuộn xuống cuối trang và bấm **Create**. ECS sẽ tạo ra một phiên bản Task Definition mới (chứa 2 containers). Tiếp theo, bạn chỉ việc cập nhật ECS Service để sử dụng Revision mới này.
 
@@ -104,7 +104,7 @@ Truy cập **AWS CloudWatch Console**, nhìn sang menu bên trái, dưới mục
 
 Tiếp tục chọn mục **Traces** ở menu trái, quản trị viên có thể click vào từng Request cụ thể để xem biểu đồ phân tích chính xác thời gian thi hành của mỗi tác vụ con tính bằng mili-giây, giúp dễ dàng khoanh vùng các truy vấn SQL chậm hoặc các logic xử lý đang ngốn nhiều tài nguyên.
 
-![AWS X-Ray Service Map](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/5.13.2-xray-service-map.png)
+![AWS X-Ray Service Map](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/5.13.2-xray-service-map.png)
 
 ***
 

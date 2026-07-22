@@ -27,12 +27,12 @@ Thay vì phải tạo thủ công từng thành phần rời rạc, tiến hành
 
 5. Nhìn sang nửa phải màn hình, kiểm tra bảng **Preview**. Hệ thống sẽ vẽ ra một sơ đồ mạng lưới cực kỳ đẹp mắt và logic về hạ tầng bạn sắp tạo.
 
-   ![VPC Preview Map](/images/5-Workshop/5.3-Network-vpc/5.3.1-create-vpc-subnets/vpc_preview_map.png)
+   ![VPC Preview Map](/FCAJ_My_Workshop/images/5-Workshop/5.3-Network-vpc/5.3.1-create-vpc-subnets/vpc_preview_map.png)
 
 6. Cuộn xuống cuối trang và bấm **Create VPC**.
 7. Chờ vài phút để AWS cấp phát toàn bộ tài nguyên (VPC, Subnets, Internet Gateway, NAT Gateway, Route Tables và S3 Endpoint). Khi hoàn tất, sẽ thấy màn hình báo thành công.
 
-   ![VPC Success](/images/5-Workshop/5.3-Network-vpc/5.3.1-create-vpc-subnets/vpc_success_creation.png)
+   ![VPC Success](/FCAJ_My_Workshop/images/5-Workshop/5.3-Network-vpc/5.3.1-create-vpc-subnets/vpc_success_creation.png)
 
 ---
 **Bước tiếp theo:** Hệ thống hạ tầng mạng đa tầng (VPC và Subnets) đã được khởi tạo thành công. Tiến hành tiến tới phần [**Kiểm tra NAT Gateway & Định tuyến**](../5.3.2-create-nat-gateway/) để đảm bảo các dịch vụ nội bộ có thể kết nối ra Internet một cách an toàn thông qua bảng định tuyến (Route Tables).

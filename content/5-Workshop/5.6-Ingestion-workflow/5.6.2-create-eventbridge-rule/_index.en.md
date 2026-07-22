@@ -33,28 +33,28 @@ Access the **Amazon EventBridge** service → **Rules** → **Create rule**. Use
   }
   ```
 
-![EventBridge Event Pattern](/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_event_pattern.png)
+![EventBridge Event Pattern](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_event_pattern.png)
 
 **Step 2: Set up Target (Destination)**
 - On the left toolbar, search for the **SQS** service (or open the AWS Services category), and drag the **Amazon SQS** block into the **Targets** area.
 - In the Target configuration panel, under *Queue*, select the exact **`cloudforge-media-task-queue`** queue initialized in the previous section.
 - *(Note: We will add the second target, AWS Step Functions, after creating it in the next chapter).*
 
-![EventBridge Target Setup](/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_target.png)
+![EventBridge Target Setup](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_target.png)
 
 **Step 3: Name the Rule**
 - Switch to the **Configure** tab on the navigation bar.
 - **Rule name:** Name the rule `cloudforge-s3-to-sqs-rule`.
 - **Activation:** Ensure the activation toggle is in the **Active** state.
 
-![EventBridge Rule Naming](/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_rule_naming.png)
+![EventBridge Rule Naming](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_rule_naming.png)
 
 Finally, double-check the routing diagram and click **Create** in the top right corner to complete the deployment process.
 
 #### 2. Event Routing Deployment Results
 When the rule is successfully created and activated, the Asynchronous Data Pipeline is officially established and flows seamlessly from S3 Storage through EventBridge, securely congregating at the SQS Queue.
 
-![EventBridge Rule Created](/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_rule_created.png)
+![EventBridge Rule Created](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.2-create-eventbridge-rule/eventbridge_rule_created.png)
 
 {{% notice tip %}}
 **System Design Note (Decoupling Architecture):** Decoupling components using EventBridge means the Frontend layer does not need to care about the Backend system's state. Users simply upload files to S3 and receive a success response immediately. All heavy backend tasks are orchestrated by EventBridge and SQS, completely eliminating the risk of bottlenecks or timeouts at the API gateway.

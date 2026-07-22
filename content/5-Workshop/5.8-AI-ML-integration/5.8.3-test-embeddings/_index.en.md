@@ -21,7 +21,7 @@ The AI Worker application utilizes the **Amazon Titan Text Embeddings v2** model
 3. **Receiving the Vector Array:** Bedrock calculates and responds with a data array containing thousands of floating-point values (e.g., `[0.012, -0.453, 0.887, ...]`). This serves as the distinct "semantic signature" of that specific text segment.
 4. **Knowledge Storage:** This Vector array is subsequently inserted into the Vector Database (PostgreSQL paired with `pgvector`) alongside its Metadata, such as the video ID and timestamps.
 
-![Embeddings Flow](/images/5-Workshop/5.8-AI-ML-integration/5.8.3-test-embeddings/embeddings_flow.png)
+![Embeddings Flow](/FCAJ_My_Workshop/images/5-Workshop/5.8-AI-ML-integration/5.8.3-test-embeddings/embeddings_flow.png)
 
 #### Infrastructure Role Permissions (IAM Role)
 For the communication process with Amazon Bedrock to function smoothly without being blocked, the **ECS Task Role** of the AI Worker has been pre-granted the following authorization policy:

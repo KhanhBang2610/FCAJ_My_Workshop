@@ -19,20 +19,20 @@ Before launching the database, RDS requires us to define a **Subnet Group** to s
 6. **Add subnets:** Select 2 Availability Zones (`ap-southeast-1a` and `ap-southeast-1b`), then check the 2 corresponding Private Subnets designated for the Database layer.
 7. Click **Create**.
 
-![DB Subnet Group](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/db_subnet_group.png)
+![DB Subnet Group](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/db_subnet_group.png)
 
 #### 2. Provision the PostgreSQL Database
 1. Switch to the **Databases** menu on the left and click **Create database**.
 2. From the dropdown menu, click on **Full configuration** to reveal all deep system configurations.
 3. **Engine options:** Select **PostgreSQL** (leave the default version suggested by the system).
 
-![RDS Engine Setup](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_engine.png)
+![RDS Engine Setup](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_engine.png)
 
 4. **Templates & Durability:**
    - **Templates:** Select **Sandbox** (or *Dev/Test*) to maximize cost savings for the workshop environment.
    - **Deployment options:** Ensure the system defaults to **Single-AZ DB instance deployment**.
 
-![RDS Template Setup](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_template.png)
+![RDS Template Setup](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_template.png)
 
 5. **Settings:**
    - **DB instance identifier:** Change the default name to `cloudforge-db`.
@@ -40,14 +40,14 @@ Before launching the database, RDS requires us to define a **Subnet Group** to s
    - **Master username:** Keep `postgres`.
    - **Master password / Confirm password:** Enter a secure password (e.g., `CloudForge2026!`).
 
-![RDS Settings](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_settings.png)
+![RDS Settings](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_settings.png)
 
 6. **Instance configuration & Storage:**
    - **DB instance class:** Keep the smallest burstable class suggested (e.g., `db.t3.micro`).
    - **Allocated storage:** Reduce the large default value to **20 GiB** (the minimum allowed).
    - **Storage autoscaling:** Uncheck *Enable storage autoscaling*.
 
-![RDS Instance Configuration](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_instance.png)
+![RDS Instance Configuration](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_instance.png)
 
 7. **Connectivity (Internal Network - Extremely Important):**
    - **Virtual private cloud (VPC):** Select `cloudforge-vpc`.
@@ -55,13 +55,13 @@ Before launching the database, RDS requires us to define a **Subnet Group** to s
    - **Public access:** Select **No** *(Ensure the database is completely isolated from the Internet)*.
    - **VPC security group:** Select **Choose existing** → Remove the `default` group and select only **`cloudforge-db-redis-sg`** (The Zero-Trust firewall you created in section 5.3.4).
 
-![RDS Connectivity Setup](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_connectivity.png)
+![RDS Connectivity Setup](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_connectivity.png)
 
 8. Expand the **Additional configuration** section at the bottom:
    - **Initial database name:** Enter `cloudforge_db` (so AWS creates an empty DB automatically).
    - **Backup:** Uncheck *Enable automated backups* to speed up the provisioning process for the workshop.
 
-![RDS Additional Configuration](/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_additional_configuration.png)
+![RDS Additional Configuration](/FCAJ_My_Workshop/images/5-Workshop/5.4-Database-setup/5.4.2-create-rds-postgresql/rds_additional_configuration.png)
 
 9. Scroll to the bottom and click **Create database**. *(The actual provisioning process usually takes 3-5 minutes).*
 

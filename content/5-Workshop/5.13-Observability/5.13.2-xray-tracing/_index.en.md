@@ -21,7 +21,7 @@ For the containers within the ECS Task to legitimately transmit trace data back 
 4. Search for and check the **`AWSXRayDaemonWriteAccess`** policy.
 5. Click **Add permissions**.
 
-![IAM Task Role](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/iam_task_role.png)
+![IAM Task Role](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/iam_task_role.png)
 
 #### Step 2: Incorporate the X-Ray Daemon Sidecar into Task Definition
 On the ECS Fargate environment, the industry-standard methodology for running X-Ray is the **Sidecar** pattern: Executing a secondary container (Daemon) concurrently with the primary container (Backend) within the same Task. This Daemon will listen for, harvest Trace data packets from the application, and propel them to AWS via the UDP protocol.
@@ -34,7 +34,7 @@ In the new Revision creation interface, retain the configurations for Container 
 *   **Image URI**: `public.ecr.aws/xray/aws-xray-daemon:latest`
 *   **Essential container**: Yes
 
-![X-Ray Container Setup](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_container_setup.png)
+![X-Ray Container Setup](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_container_setup.png)
 
 **Port mappings:**
 *   **Container port**: `2000`
@@ -43,12 +43,12 @@ In the new Revision creation interface, retain the configurations for Container 
 **Resource allocation limits:**
 *   **Memory hard limit**: `256` *(Allocate 256 MB RAM for the Daemon to operate)*.
 
-![X-Ray Port & Resource Setup](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_port_resource.png)
+![X-Ray Port & Resource Setup](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_port_resource.png)
 
 **Log collection:**
 *   Check **Use log collection** to push the X-Ray Daemon logs to CloudWatch, simplifying debugging if the Daemon encounters startup issues.
 
-![X-Ray Log Collection](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_log_collection.png)
+![X-Ray Log Collection](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/xray_log_collection.png)
 
 Once all information is filled out, scroll to the bottom of the page and click **Create**. ECS will generate a new Task Definition revision (containing 2 containers). Next, simply update your ECS Service to deploy this new Revision.
 
@@ -104,7 +104,7 @@ Navigate to the **AWS CloudWatch Console**, look at the left-hand menu under **A
 
 Proceed to select the **Traces** section in the left menu. Administrators can click on individual Requests to scrutinize an analytical chart detailing the precise execution duration of each sub-task measured in milliseconds. This facilitates effortless isolation of sluggish SQL queries or processing logic consuming excessive resources.
 
-![AWS X-Ray Service Map](/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/5.13.2-xray-service-map.png)
+![AWS X-Ray Service Map](/FCAJ_My_Workshop/images/5-Workshop/5.13-Observability/5.13.2-xray-tracing/5.13.2-xray-service-map.png)
 
 ***
 

@@ -16,8 +16,8 @@ To allow Step Functions to securely invoke an external API, AWS requires configu
 - **Configure authorization:** Select `Custom configuration`.
 - **Authorization type:** Select `API Key` (enter `X-Api-Key` for `API Key Name` and `dummy` for `Value`).
 
-![Create Connection](/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/eventbridge_connection_1.png)
-![Configure Authorization](/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/eventbridge_connection_2.png)
+![Create Connection](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/eventbridge_connection_1.png)
+![Configure Authorization](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/eventbridge_connection_2.png)
 
 #### 2. Initialize and Configure State Machine Properties
 Access the **AWS Step Functions** service → **State machines** → select **Create state machine**. Configure the foundational parameters in the new initialization interface:
@@ -27,7 +27,7 @@ Access the **AWS Step Functions** service → **State machines** → select **Cr
 - **State machine type:** Select `Standard` (Ensuring a maximum execution time of up to 1 year and supporting detailed execution history storage, perfectly suited for long-term Media analytics tasks).
 - **State machine query language:** The system defaults to **JSONata** (A new query standard that optimizes direct data transformation during state transitions without relying on intermediate source code).
 
-![Step Functions Config](/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/step_functions_config.png)
+![Step Functions Config](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/step_functions_config.png)
 
 Click **Continue** to move to the visual design interface.
 
@@ -86,7 +86,7 @@ In the Workflow Studio Canvas space, drag and drop logic state blocks to establi
      }
      ```
 
-![Workflow Studio Setup](/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/workflow_studio_setup.png)
+![Workflow Studio Setup](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/workflow_studio_setup.png)
 
 #### 4. Execute Infrastructure Deployment
 Once the inverted Y-shaped diagram accurately completes the orchestration logic, perform the saving steps:
@@ -129,7 +129,7 @@ Once the inverted Y-shaped diagram accurately completes the orchestration logic,
      ```
   4. Click **Next**, name the policy `AllowECSRunTask`, and click **Create policy**.
   
-![IAM Inline Policy](/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/iam_inline_policy.png)
+![IAM Inline Policy](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/iam_inline_policy.png)
 
 #### 5. Update EventBridge Rule (Event Routing)
 Now that the Step Functions state machine is ready, we must configure EventBridge to route S3 events to it:
@@ -139,12 +139,12 @@ Now that the Step Functions state machine is ready, we must configure EventBridg
 4. In the configuration panel on the right, select the state machine `cloudforge-media-workflow`.
 5. Click **Update** to save the rule. From now on, every S3 upload event will be fanned out to both SQS and Step Functions simultaneously.
 
-![EventBridge Target Update](/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/eventbridge_target_update.png)
+![EventBridge Target Update](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/eventbridge_target_update.png)
 
 #### 6. State Machine Initialization Results
 The asynchronous orchestration process is successfully configured, creating a durable Decoupled Architecture.
 
-![Step Functions Workflow](/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/step_functions_diagram.png)
+![Step Functions Workflow](/FCAJ_My_Workshop/images/5-Workshop/5.6-Ingestion-workflow/5.6.3-create-step-functions/step_functions_diagram.png)
 
 {{% notice tip %}}
 **System Design Note (Business Logic Separation):** Moving all branching and orchestration flows to the Step Functions tier completely isolates Business Logic from the application servers' (Workers) source code. By configuring Step Functions to invoke a Webhook, the system ensures that the AI Worker exclusively handles Video processing, while the Backend is solely responsible for aggregating AI results and updating the database.

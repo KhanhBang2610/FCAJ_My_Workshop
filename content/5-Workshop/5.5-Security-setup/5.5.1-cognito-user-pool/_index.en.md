@@ -33,7 +33,7 @@ Once successfully created, the system will take you to the management page of th
 1. **User Pool ID:** Located right at the top of the overview page (Format: `ap-southeast-1_xxxxxxxxx`).
 2. **App Client ID:** Switch to the **App integration** tab, scroll down to the *App clients and analytics* section, and copy the ID string for `cloudforge-app` (e.g., `3abc123xyz...`).
 
-![Cognito App Client](/images/5-Workshop/5.5-Security-setup/5.5.1-cognito-user-pool/cognito_app_client.png)
+![Cognito App Client](/FCAJ_My_Workshop/images/5-Workshop/5.5-Security-setup/5.5.1-cognito-user-pool/cognito_app_client.png)
 
 ***
 

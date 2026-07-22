@@ -28,20 +28,20 @@ To definitively solve this problem according to enterprise standards, we will us
 - **Encryption key:** Keep the default `aws/secretsmanager` (AWS will automatically use the KMS service to encrypt this vault).
 - Click **Next**.
 
-![AWS Secrets Manager Step 1](/images/5-Workshop/5.5-Security-setup/5.5.2-secrets-manager/aws_secrets_manager_step_1.png)
+![AWS Secrets Manager Step 1](/FCAJ_My_Workshop/images/5-Workshop/5.5-Security-setup/5.5.2-secrets-manager/aws_secrets_manager_step_1.png)
 
 **Step 2: Configure secret**
 - **Secret name:** Enter the name following a hierarchical directory structure for easy management: `cloudforge/backend/config`
 - **Description:** Enter a brief description (e.g., `Contains sensitive configuration for the Smart Media Analytics Backend application`).
 - Leave other fields at their defaults and click **Next**.
 
-![AWS Secrets Manager Step 2](/images/5-Workshop/5.5-Security-setup/5.5.2-secrets-manager/aws_secrets_manager_step_2.png)
+![AWS Secrets Manager Step 2](/FCAJ_My_Workshop/images/5-Workshop/5.5-Security-setup/5.5.2-secrets-manager/aws_secrets_manager_step_2.png)
 
 **Step 3: Configure rotation**
 - **Automatic rotation:** Select **Disable automatic rotation** (Turn off the automatic periodic password change feature).
 - Click **Next**.
 
-![AWS Secrets Manager Step 3](/images/5-Workshop/5.5-Security-setup/5.5.2-secrets-manager/aws_secrets_manager_step_3.png)
+![AWS Secrets Manager Step 3](/FCAJ_My_Workshop/images/5-Workshop/5.5-Security-setup/5.5.2-secrets-manager/aws_secrets_manager_step_3.png)
 
 **Step 4: Review**
 - Scroll to the bottom to review the configuration structure and click the **Store** button to complete the initialization.
@@ -56,7 +56,7 @@ Here, you need to note down the following extremely important parameter:
 **Future operation mechanism:** Later on, when configuring the AWS ECS (Elastic Container Service) to run the Backend application, we will no longer need to pass the `.env` file into the Container. Instead, we only need to attach this **Secret ARN** string into the Task Definition configuration section. When the Container starts, AWS ECS will automatically use IAM permissions to read this vault and directly inject the environment variables into the Container's RAM in an absolutely secure manner.
 {{% /notice %}}
 
-![Secrets Manager Created](/images/5-Workshop/5.5-Security-setup/5.5.2-secrets-manager/secrets_manager_created.png)
+![Secrets Manager Created](/FCAJ_My_Workshop/images/5-Workshop/5.5-Security-setup/5.5.2-secrets-manager/secrets_manager_created.png)
 
 ***
 

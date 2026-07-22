@@ -41,7 +41,7 @@ Cuối cùng, cuộn xuống dưới cùng của màn hình chính và bấm nú
 #### 2. Kết quả cấu hình tường lửa ứng dụng
 Sau khi hệ thống khởi tạo thành công, Web ACL đã sẵn sàng ở trạng thái kích hoạt với các bộ luật tối ưu.
 
-![WAF Rules Created](/images/5-Workshop/5.5-Security-setup/5.5.3-waf-rules/waf_rules_created.png)
+![WAF Rules Created](/FCAJ_My_Workshop/images/5-Workshop/5.5-Security-setup/5.5.3-waf-rules/waf_rules_created.png)
 
 {{% notice tip %}}
 **Cost Optimization (Tối ưu chi phí):** Việc chủ động lựa chọn tự xây dựng bộ quy tắc (Build your own pack) thay vì sử dụng gói Recommended giúp giảm thiểu chi phí duy trì WAF từ mức ~$55/tháng xuống chỉ còn ~$5/tháng (phí duy trì Web ACL cơ bản). Thiết lập này là phù hợp và tối ưu nhất cho môi trường thử nghiệm (PoC) trong khi vẫn đảm bảo chặn đứng các rủi ro chí mạng.

@@ -30,7 +30,7 @@ curl -X POST http://[ALB-DNS]/api/v1/ingest \
 ```
 *The returned response will contain a `job_id` (e.g., `14492409-f583-41ac-89c4-c66a9351919c`).*
 
-![Trigger REST API](/images/5-Workshop/5.9-API-and-realtime/5.9.4-test-realtime-flow/trigger_api.png)
+![Trigger REST API](/FCAJ_My_Workshop/images/5-Workshop/5.9-API-and-realtime/5.9.4-test-realtime-flow/trigger_api.png)
 
 **Step 2: Establish the Listening Connection**
 Use `wscat` to open a WebSocket connection piercing directly through the Application Load Balancer (ALB). Replace `[ALB-DNS]` and `[job_id]` with the exact UUID string you received in Step 1.
@@ -39,7 +39,7 @@ wscat -c ws://[ALB-DNS]/api/v1/ingest/ws/[job_id]
 ```
 *System state: The Terminal transitions to a Connected state. The Backend Container (FastAPI) natively records and maintains this connection session.*
 
-![Websocket Test](/images/5-Workshop/5.9-API-and-realtime/5.9.4-test-realtime-flow/websocket_test.png)
+![Websocket Test](/FCAJ_My_Workshop/images/5-Workshop/5.9-API-and-realtime/5.9.4-test-realtime-flow/websocket_test.png)
 
 **Step 3: Validate the Real-time Data Flow**
 In the Terminal running `wscat`, the system will output JSON payloads as soon as the AI Worker's status changes, culminating in the completion payload (actual processing time depends on the Video size).
@@ -59,7 +59,7 @@ The returned result requires no Polling action from the Client:
   }
 ```
 
-![Realtime Test](/images/5-Workshop/5.9-API-and-realtime/5.9.4-test-realtime-flow/realtime_test.png)
+![Realtime Test](/FCAJ_My_Workshop/images/5-Workshop/5.9-API-and-realtime/5.9.4-test-realtime-flow/realtime_test.png)
 
 {{% notice tip %}}
 **Architectural Evaluation:** The test results confirm that the Event-Driven architecture and Real-time API are functioning as designed. The processing occurs completely asynchronously, eliminating bottlenecks or wasted connection resources caused by traditional Polling mechanisms.

@@ -1,9 +1,9 @@
 ---
-title: "4.1. Event Recap: AWS CD Event"
+title: "4.1. Event Recap: AWS CD Event (30/5/2027)"
 weight: 1
 ---
 
-## Event Recap: “AWS CD Event”
+## Event Recap: “AWS CD Event (30/5/2027)”
 
 ### Event Objectives
 - Share practical knowledge, skills, and experiences from industry speakers

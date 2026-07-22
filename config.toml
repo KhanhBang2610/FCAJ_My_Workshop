@@ -1,6 +1,6 @@
 baseURL = "https://KhanhBang2610.github.io/FCAJ_My_Workshop/"
-relativeURLs = true
-canonifyURLs = false
+relativeURLs = false
+canonifyURLs = true
 defaultContentLanguage = "vi"
 
 theme = "hugo-theme-relearn"

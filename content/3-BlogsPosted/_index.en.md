@@ -1,17 +1,15 @@
 ---
 title: "3. Blogs Posted"
 weight: 3
-alwaysopen: true
 ---
 
-Below is a summary of 3 technical blog posts focusing on how to apply AWS services to solve real-world problems across various domains:
+Welcome to the **Blogs Posted** section! During my learning and internship journey at AWS, I regularly read deep-dive articles on the AWS Blog. Below is a summary of the 3 most outstanding articles that I have carefully studied and drawn many practical lessons from. Click on the titles to view my full detailed reflections:
 
-### 1. [Building your first search application with Amazon OpenSearch Service]({{< ref "3.1-Blog1.en.md" >}})
-**Summary:** In the era of data explosion, real-time search and analytics capabilities are vital for businesses. This post explores the power of Amazon OpenSearch Service—a fully managed AWS service that helps you build robust search platforms without the overhead of managing complex infrastructure.
+### 1. [Building Highly Available Oracle Databases with Amazon FSx for NetApp ONTAP](3.1-blog1/)
+This blog provides a practical perspective on how to combine multiple services (Amazon FSx, EC2 Auto Scaling, AWS Backup, Lambda, and Systems Manager) to create a self-healing architecture. My biggest takeaway is not just how to deploy a database, but the mindset of designing a highly available system that ensures the minimum possible Recovery Time Objective (RTO) and Recovery Point Objective (RPO).
 
-### 2. [How AI and Robots are transforming sustainable agriculture with Amazon SageMaker AI?]({{< ref "3.2-Blog2.en.md" >}})
-**Summary:** Sharing an interesting case study from Aigen, an autonomous agricultural robotics company, on how they utilized Amazon SageMaker AI to solve AI training challenges in remote areas. The post dives into modernizing the entire AI pipeline to identify weeds, track crops, and optimize smart farming productivity.
+### 2. [Query Amazon S3 access logs instantly: Goodbye to log data "cleanup" nightmares!](3.2-blog2/)
+If you've ever struggled to build complex ETL pipelines just to read raw logs from S3, this blog offers the perfect solution. By sending S3 Access Logs directly into CloudWatch Logs and S3 Tables, the system automatically structures the data. This allows us to perform instant queries at lightning speed, saving operational time and optimizing the security auditing workflow.
 
-### 3. [Automating medical records digitization with Amazon Bedrock Data Automation and AWS HealthLake]({{< ref "3.3-Blog3.en.md" >}})
-**Summary:** Exploring advanced technology architectures for the healthcare sector. This blog guides you through combining Generative AI (Amazon Bedrock Data Automation) and AWS HealthLake to automate the conversion of unstructured medical documents (paper, PDFs) into digital data that can be easily searched, analyzed, and managed.
-
+### 3. [Claude Apps Gateway for AWS - The solution for Enterprise AI Management](3.3-blog3/)
+As AI booms, the question is no longer "How powerful is the AI?" but "How do we manage the AI?". This blog introduces the Claude Apps Gateway - a middleware layer that helps enterprises strictly control access, track user activity, and manage costs when utilizing AI. This provides an extremely practical perspective for engineers looking to deploy AI securely in real-world enterprise environments.

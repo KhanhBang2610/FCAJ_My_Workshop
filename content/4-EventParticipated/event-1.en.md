@@ -1,75 +1,132 @@
 ---
-title: "4.1. Harvest Report: First Cloud AI Journey Event (09/05/2026)"
+title: "4.1. Event Recap: AWS CD Event"
 weight: 1
 ---
 
-## Harvest Report: Knowledge Learned from the First Cloud AI Journey Event on May 09, 2026
+## Event Recap: “AWS CD Event”
 
-Hello everyone,
+### Event Objectives
+- Share practical knowledge, skills, and experiences from industry speakers
+- Create opportunities for networking, discussion, and exchanging ideas among participants
+- Provide valuable perspectives to support learning and career development
+- Inspire attendees through real-world stories and lessons from actual projects
 
-Today I want to sit down and type a quick recap about the tech event **First Cloud AI Journey** that took place on May 09, 2026. The main purpose of the event was to share study approaches, the art of communicating with AI, the power of AI Agents, and building a continuous learning culture.
-
-Below are 4 lessons and practical experiences from the speakers that gave me new perspectives to shift my mindset and improve my performance when working with AI.
-
----
-
-### 1. Steal the Formula Used by Social Media
-*Speaker: Mr. Huynh Hoang Long (Cloud Engineer, eCloudvalley Vietnam)*
-
-![Huynh Hoang Long](/images/4-EventParticipated/event-1/session1.jpg)
-
-**Core Content:**
-"Humans fear losing more than they enjoy gaining". By exploring the formulas social media platforms use to attract and retain users, we can apply these psychological mechanisms to our learning. Specifically, building learning streaks and rewarding ourselves to maintain continuous motivation and discipline.
-
-> **Personal Experience:**
-> I realized that learning doesn't have to be forced; it can be "hacked" using psychological tools borrowed from social media platforms. Establishing learning streaks and leveraging the "fear of loss" helps maintain the habit of studying new technology every day without interruption.
+### Speakers
+- **Huynh Thai Linh** – FCAJ
+- **Huynh An Khuong**, **Mai Quoc Anh**, **Nguyen Tran Minh Quan** - FCAJ Challenger
+- **Nguyen Thi Quynh Nhu** – FCAJ
+- **Tran Nghia** - FCAJ
+- **Tran Minh Quan** - FCAJ
+- **Pham Khac Uy** - FCAJ
 
 ---
 
-### 2. The Art of Communicating with AI & Automated Prompt Engineering
-*Speaker: Mr. Nguyen Tuan Thinh (DevOps Engineer Intern, STYL Solution Pte.Ltd)*
+## Highlights
 
-![Nguyen Tuan Thinh](/images/4-EventParticipated/event-1/session2.jpg)
+### Topic 1: Level Up Your AWS Skills with Cloud Quest and FLoCI
 
-**Core Content:**
-A generic prompt will generate a generic result, wasting tokens. A standard prompt needs: Role, Instruction, Context, Input data, Output format, Examples, and Constraints. Moreover, we should instruct AI on WHAT TO DO (DOs) instead of WHAT NOT TO DO (DON'Ts). Combining with advanced techniques like Chain-of-Thought, Self-Consistency, and RAG helps AI process logic exceptionally well.
+**1. Challenges in Hands-on AWS Learning**
+- Understand common challenges students face when learning AWS through practical experience.
+- Identify the gap between theoretical knowledge and real-world cloud deployment.
+- Discover the importance of hands-on learning in cloud skill development.
 
-> **Personal Experience:**
-> Prompting skills directly determine the quality of AI responses. I started restructuring how I ask questions to ChatGPT, Claude, or Amazon Q in my daily work according to the learned framework for the most accurate answers. Furthermore, the Proptimizer architecture is an excellent example of applying Serverless (API Gateway/Lambda/DynamoDB) with Bedrock at $0 platform cost.
+**2. AWS Cloud Quest**
+- Introduction to AWS Cloud Quest as a practical and interactive learning platform.
+- Learn AWS concepts through real-world challenges and scenarios.
+- Build cloud knowledge through experiential learning rather than just theory.
 
----
+**3. FLoCI Open Source**
+- Overview of FLoCI as an open-source initiative for cloud learning and collaboration.
+- Opportunities for students to engage with the cloud community and learning resources.
+- Encourage knowledge sharing and practical skill development through open-source contributions.
 
-### 3. Growth Mindset
-*Speaker: Mr. Nguyen Khang (Cloud Solution Architect, Cloud Kinetics Vietnam)*
-
-![Nguyen Khang](/images/4-EventParticipated/event-1/session3.jpg)
-
-**Core Content:**
-Always ask "Why?" – curiosity is your greatest asset. Don't take things for granted. In the early stages of learning, mistakes are valuable lessons, not failures. The moment you stop learning is when you fall behind.
-
-> **Personal Experience:**
-> The greatest value of the "Growth Mindset" is that I am no longer afraid of making mistakes. Every error is a valuable lesson in the early stages. This brings confidence when facing new technologies and challenges.
-
----
-
-### 4. Developer Agent
-*Speaker: Ms. Nguyen Phuong Thao (Cloud Engineer Intern, VIB)*
-
-![Nguyen Phuong Thao](/images/4-EventParticipated/event-1/session4.jpg)
-
-**Core Content:**
-Applying AI Agents to the software development process requires discipline. The 4-step process of a Dev Agent includes: (1) Starting the Dev Agent to automatically find Approved Stories, (2) Breaking down Stories into extremely detailed Subtasks, (3) Coding accurately without guessing, (4) Changing the Story status to "Ready for Review" after completion.
-
-> **Personal Experience:**
-> I see enormous potential in applying Agents to code processing. Not just for chatting, AI can help discipline the software development process from taking a task to completing the code, significantly increasing productivity and reducing errors.
+**4. Combining Cloud Quest and FLoCI Effectively**
+- Leverage Cloud Quest for structured hands-on AWS learning.
+- Use FLoCI to expand learning through community participation and collaboration.
+- Create a balanced learning path combining guided practice and real-world experience.
+- Maximize cloud skill development through both platforms.
 
 ---
 
-## Conclusion
+### Topic 2: Hackathon – Lots of Fun, Bug Fixing, and Learning Experience
+- Understanding Hackathons
+- Learning by Doing
+- Building Projects for Your Portfolio
+- Accumulating Practical Experience
 
-![Event Photo 1](/images/4-EventParticipated/event-1/event_09_05(1).jpg)
-![Event Photo 2](/images/4-EventParticipated/event-1/myself.jpg)
+---
 
-Attending the First Cloud AI Journey event was an eye-opening experience, not only in terms of technology but also in personal development mindset. The speakers brought fresh energy and shared extremely practical perspectives from personal experience.
+### Topic 3: Why It’s a “Must-have” for Your Career, Student Life, and Everything in Between.
 
-Overall, the event deeply changed my approach to learning, provided methods to optimize productivity with artificial intelligence, and created a huge motivation for my upcoming development journey.
+**1. Let's Talk About Confidence**
+- What confidence is
+- Why confidence is important in daily life
+
+**2. The Cost of Lacking Confidence in Student Life**
+- The impact of a lack of confidence on learning and opportunities
+- Common challenges students face
+
+**3. The Science Behind the Struggle**
+- Psychological factors affecting confidence
+- Understanding the roots of low self-esteem
+
+**4. The Power of Confidence – Why It Is Necessary**
+- Benefits of confidence in academics and career
+- Building resilience and personal growth
+
+**5. How to “Hack” Daily Confidence**
+- Practical strategies to build confidence
+- Small habits that create long-lasting improvements
+
+**6. Summary**
+- Key takeaways and reflections
+
+---
+
+### Topic 4: Dai Viet Astrology
+
+**1. Product Introduction**
+- Decoding destiny
+- Understanding your inner self
+
+**2. Discovering Astrological Insights**
+- Exploring the secrets of the universe
+- Understanding how energy from constellations affects life
+
+**3. AI-Powered Experience**
+- Generated by AI
+- View with suggested advice
+
+---
+
+### Topic 5: The Iceberg of a Project – DevOps Before Disaster
+- Hidden challenges in software projects
+- The role of DevOps in preventing failure
+- Identifying risks before they become disasters
+- Building more reliable development processes
+
+---
+
+### Topic 6: The Iceberg of Procrastination
+- Understanding procrastination and underlying causes
+- The impact of procrastination on academic and work performance
+- Identifying common procrastination behaviors
+- Strategies to overcome procrastination and improve productivity
+
+---
+
+## Lessons Learned
+
+Attending this event gave me many fresh perspectives and valuable practical experiences:
+
+- **Hands-on Cloud Skills:** Better understood the importance of learning by doing through platforms like AWS Cloud Quest instead of just studying theory.
+- **Problem-Solving Mindset:** Hackathons are excellent opportunities to practice building real products, teamwork, and fixing bugs.
+- **The Importance of DevOps:** Recognized the “iceberg” in software projects and the key role of DevOps in early detection and prevention of risks.
+- **Personal Development:** Confidence and the ability to overcome procrastination are crucial factors in optimizing work and study performance.
+- **AI Applications:** Understood how to apply AI to create novel and personalized experiences for users.
+
+### Event Photos
+*(Event Photo 1)*
+*(Event Photo 2)*
+
+> **Overall, the event not only provided technical knowledge but also helped me reshape my mindset regarding application design, system modernization, and cross-team collaboration.**

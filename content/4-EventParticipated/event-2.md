@@ -1,109 +1,83 @@
 ---
-title: "4.2. Báo cáo thu hoạch: Event FCAJ Community Day"
+title: "4.2. Báo cáo thu hoạch: Event FCAJ Community Day (27/6/2026)"
 weight: 2
 ---
 
-## Báo cáo thu hoạch: Những Kiến Thức Bản Thân Học Được Qua Event FCAJ Community Day ngày 23/5/2026
+## Báo cáo thu hoạch: Những Kiến Thức Bản Thân Học Được Qua Event FCAJ Community Day ngày 27/6/2026
 
 Chào mọi người,
 
-Hôm nay mình muốn ngồi lại, gõ vài dòng recap về sự kiện công nghệ **FCAJ Community Day** diễn ra vào ngày 23/5 vừa qua.
+Hôm nay mình lại ngồi lại, gõ vài dòng recap về sự kiện công nghệ **FCAJ Community Day** diễn ra vào tháng 6/2026 vừa qua. Sự kiện lần này là một bức tranh toàn cảnh về cách doanh nghiệp ứng dụng AI vào thực tế, từ vận hành hạ tầng đến quản trị nhân sự.
 
-Dưới đây là 6 bài học, 6 trải nghiệm thực tế từ các diễn giả đã mang lại cho bản thân mình nhiều góc nhìn mới, không chỉ về công nghệ mà còn là kinh nghiệm về việc xử lý công việc sao cho đúng để mang lại hiệu suất tốt nhất.
+Dưới đây là 5 bài học, 5 trải nghiệm thực tế từ các diễn giả đã mang lại cho mình nhiều góc nhìn mới về kỷ nguyên AI Agentic.
 
 ---
 
-### 1. Sự bất trị của LLM: Khi Temp = 0 cũng không cản được AI "quay xe"
-*Diễn giả: Anh Đức Đào (Solution Architect)*
+### 1. Deep Response Engine: Chuyển dịch từ 'Cảnh báo' sang 'Hành động'
+*Diễn giả: Anh Steve Trần*
+
+![Steve Tran](/FCAJ%20June%2027%20assets/Steve%20Tran.jpg)
 
 **Nội dung cốt lõi:**
-Bài nói của anh Đức Đào đã giúp mình có một nhìn nhận khác. Lâu nay, khi code các luồng tích hợp AI, mình luôn đinh ninh rằng cứ set tham số `temperature = 0` là hệ thống sẽ trả về đúng một định dạng JSON chuẩn xác 100% cho mọi lần gọi. Nhưng sự thật là: LLM vẫn có thể đưa ra kết quả khác nhau! Nguyên nhân sâu xa đến từ sai số số thực dấu phẩy động (floating-point) trên kiến trúc GPU và cơ chế tối ưu hóa batching của các nhà cung cấp.
+Anh Steve đã chỉ ra 'bức tường phức tạp' (complexity wall) mà các hệ thống cloud hiện đại đang gặp phải. Thay vì cứ phụ thuộc vào các hệ thống cảnh báo (alert-driven) khiến đội ngũ ops luôn trong tình trạng 'cháy máy', giải pháp là chuyển sang hệ thống Action-driven. Với Deep Response Engine, AI không chỉ báo lỗi mà còn tự động điều tra (investigation) và đề xuất phương án xử lý, biến thời gian xử lý sự cố từ vài giờ xuống còn vài phút.
 
 > **Trải nghiệm bản thân:**
-> Lúc nghe đến đoạn nguyên nhân từ phần cứng GPU, mình thực sự hiểu khác. Thật ra AI là xác suất, không phải là hàm toán học tuyến tính. Thay vì cố gắng ép nó thành một cỗ máy cứng nhắc, lời khuyên của anh Đức là hãy dùng `temperature = 0.1` để tránh model bị lặp từ vựng, kết hợp với JSON mode và quan trọng nhất: **Thiết kế hệ thống backend phải chấp nhận sự biến thiên của đầu ra**. Rõ ràng, việc lường trước lỗi và xử lý ngoại lệ (Exception Handling) rất quan trọng.
+> Mình nhận ra các startup thường mắc kẹt ở việc chỉ build 'ý tưởng' (BC ideas) mà thiếu đi các 'Champion khách hàng'. Bài học lớn nhất là phải gắn giải pháp vào bài toán thực tế của doanh nghiệp (như F88, FPT), nơi mà mỗi phút downtime đều là tiền bạc.
 
 ---
 
-### 2. Dừng ngay việc làm "Kẻ gom rác Internet"
-*Diễn giả: Anh Tính Trương (Platform Engineer)*
+### 2. Voice Agents: Khi AI biết nói tiếng người
+*Diễn giả: Anh Trung, Kiệt Trần và Nghị Danh Hoàng Hiếu*
 
-![Tinh Truong](/FCAJ%20May%2023%20assets/Tinh%20Truong.jpg)
+![Trung Vu](/FCAJ%20June%2027%20assets/Trung%20Vu.jpg)
 
 **Nội dung cốt lõi:**
-Anh Tính Trương đã bóc trần một sự thật phũ phàng: Mô hình AI trả lời "ngáo" thường không phải do nó dở, mà do chúng ta cung cấp sai ngữ cảnh. Rất nhiều người đang mắc kẹt ở hội chứng "Internet Puller" – tống vào mặt AI một đống thông tin hổ lốn, thừa thãi, hoặc đưa ra những yêu cầu mơ hồ không ràng buộc. Giải pháp anh đưa ra là xây dựng một **"Second AI Brain"** với luồng chuẩn mực: `Lưu trữ -> Truy xuất -> Tạo phản hồi -> Học hỏi`.
+Từ IVR và Chatbot truyền thống, chúng chúng ta đã tiến lên kỷ nguyên AI Voice Agents. Anh Trung nhấn mạnh thách thức của ngôn ngữ Tiếng Việt là một 'low resource language'. Thay vì dùng mô hình speech-to-speech toàn phần (thường kém ổn định), giải pháp là kiến trúc 3 bước: `Speech-to-Text -> LLM (xử lý logic) -> Text-to-Speech (tạo giọng)`. Đặc biệt, khi làm cho ngân hàng, cần tuyệt đối tuân thủ Audit log, Versioning và Knowledge base để kiểm soát AI không nói 'linh tinh'.
+
+---
+
+### 3. AWS DevOps Agent: Trợ lý vận hành không bao giờ ngủ
+*Diễn giả: Chị Bảo & Anh Nguyên*
+
+![Bao and Nguyen](/FCAJ%20June%2027%20assets/Ms%20Bao%20and%20mr%20Nguyen.jpg)
+
+**Nội dung cốt lõi:**
+Đây là phần mình thích nhất vì tính ứng dụng cao cho dân DevOps. Hệ thống sử dụng khái niệm Agent Space để học topology của hạ tầng. Khi có sự cố (ví dụ ECS task lỗi), agent sẽ tự truy vết nguyên nhân (root cause), đưa ra kế hoạch khắc phục (mitigation plan) và người vận hành chỉ cần duyệt (Human-in-the-loop).
 
 > **Trải nghiệm bản thân:**
-> Nói thật là nhột! Đã bao lần mình copy nguyên một file document dài dằng dặc quăng vào các công cụ AI Agent như Cursor hay Trae rồi bực mình khi nó code không theo ý mình. Bài chia sẻ này giúp mình định hình lại cách xây dựng các hệ thống RAG (Retrieval-Augmented Generation). Chất lượng của Vector DB phụ thuộc hoàn toàn vào cách chúng ta làm sạch và phân mảnh dữ liệu (Chunking) ở bước "Lưu trữ", chứ không phải ở việc model đó có bao nhiêu tỷ tham số.
+> Điều kiện tiên quyết là hệ thống phải có Observability tốt (log, metric, alarm rõ ràng). Nếu bạn không có data nền tảng, AI cũng chỉ là 'thầy bói xem voi' với việc generate thông tin mà không có context cụ thể. Dẫn chứng về việc giảm 77% thời gian MTTR tại một trường đại học là con số rất thuyết phục.
 
 ---
 
-### 3. 36 hours, one product
-*Diễn giả: Team VIB*
+### 4. Amazon Quick Suite: Định nghĩa lại Productivity cho HR
+*Diễn giả: Anh Trường & Chị Minh Anh*
 
-![Team VIB](/FCAJ%20May%2023%20assets/Team%20VIB.jpg)
+![Truong Tran](/FCAJ%20June%2027%20assets/Truong%20tran.jpg)
 
 **Nội dung cốt lõi:**
-Team VIB đã tổng kết về hành trình của đội ngũ phát triển dự án UTMorpho tại LotusHacks, sự kiện lập trình có quy mô lớn nhất Việt Nam. Quá trình chuyển hóa từ một ý tưởng sơ khai thành một sản phẩm thực tế chỉ trong 36 giờ làm việc áp lực cao, đồng thời nhấn mạnh vào các bài học về khả năng chịu đựng và sự phối hợp nhóm.
-
-Với vị thế là đội giành chiến thắng trong phân nhánh AWS Track, nhóm tác giả đã chia sẻ các cột mốc quan trọng từ khâu xác định vấn đề cho đến những thất bại mang tính bước ngoặt. Cuối cùng, định hướng tương lai nhằm tích hợp sản phẩm vào quy trình công việc thực tế và tiếp tục lan tỏa tinh thần học hỏi thông qua các nền tảng mã nguồn mở được vạch ra.
+Sự kết hợp giữa Amazon Quick và các quy trình HR. Không chỉ là công cụ chatbot, Quick giúp tự động hóa việc sàng lọc CV (OCR), đối chiếu với JD, và chấm điểm ứng viên dựa trên thang đo kỹ thuật/kỹ năng mềm. Nó biến HR từ 'kẻ làm việc hành chính' thành 'chiến lược gia nhân sự' bằng cách giải phóng họ khỏi các tác vụ lặp đi lặp lại.
 
 ---
 
-### 4. CloudFront không chỉ là CDN, nó là nền tảng bảo vệ, tối ưu hóa ứng dụng
-*Diễn giả: Anh Nguyễn Tuấn Thịnh (DevOps Engineer)*
+### 5. Xây dựng kết nối MCP bảo mật
+*Diễn giả: Bạn Toàn Nguyễn & Anh Nghị*
 
-![Nguyen Tuan Thinh](/FCAJ%20May%2023%20assets/Thinh%20Nguyen.jpg)
+![Toan Nguyen](/FCAJ%20June%2027%20assets/Toan%20Nguyen.jpg)
 
 **Nội dung cốt lõi:**
-CDN thường bị xem là lớp hạ tầng phụ trợ, nhưng anh Thịnh đã chứng minh điều ngược lại. Bên cạnh sức mạnh từ hơn 700 điểm PoP toàn cầu giúp giảm độ trễ, CloudFront còn có khả năng chặn đứng DDoS ngay tại Edge thay vì phải đợi 3-4 phút như trước.
-
-Đặc biệt, bản update Flat-rate pricing (ra mắt vào 18/11/2025) giúp cố định hóa đơn hàng tháng, cộng với tính năng cache và nén dữ liệu giảm tới 82% dung lượng file.
-Ngoài ra, nó còn mang độ tin cậy khi có thể tự động chuyển hướng traffic đến Origin phụ (Secondary Origin) khi Origin chính gặp sự cố, cũng như phản hồi nội dung cũ từ cache khi Origin gặp lỗi (timeout) để đảm bảo trải nghiệm người dùng không bị gián đoạn.
+Model Context Protocol (MCP) là cầu nối để AI 'mở rộng' ra thế giới (Jira, Zalo, Gmail, AWS). Tuy nhiên, rủi ro bảo mật là cực lớn. Các diễn giả đã hướng dẫn cách thiết lập VPC Private Connectivity, sử dụng ALB và mã hóa TLS để đảm bảo MCP server nằm trong vùng an toàn (Private Subnet), tránh bị public dữ liệu ra Internet.
 
 > **Trải nghiệm bản thân:**
-> Mình nhận ra đôi khi tối ưu code đến mệt cũng không tiết kiệm tài nguyên EC2 hay ALB bằng việc cấu hình đúng lớp mạng bên ngoài. Giảm 82% băng thông tải tĩnh và không bao giờ phải sợ hóa đơn AWS nhảy vọt do traffic tăng đột biến.
-
----
-
-### 5. Ủy quyền sự nhàm chán cho Amazon Quick Suite
-*Diễn giả: Anh Phạm Hải Anh*
-
-![Pham Hai Anh](/FCAJ%20May%2023%20assets/Hai%20Anh.jpg)
-
-**Nội dung cốt lõi:**
-Với chủ đề Tự động hóa, anh Hải Anh giới thiệu về Amazon Quick Suite (Agentic AI). Công cụ này kết nối trực tiếp với hơn 40 nguồn dữ liệu khác nhau, tự động hóa hàng ngàn tác vụ trên các ứng dụng bên thứ ba. Từ việc lên lịch họp, tự soạn email, cho đến tạo biên bản cuộc họp (MoM) một cách chuẩn xác với các tính năng nổi bật:
-- **Dữ liệu và Kiến thức:** Sử dụng dữ liệu công ty thông qua các Spaces/datasets, kết hợp kiến thức thế giới, hỗ trợ tải lên file, kết nối DBs và hơn 40 Data connectors.
-- **Khả năng thực thi (Actions):** Thực hiện hàng nghìn hành động trong các ứng dụng bên thứ ba, cung cấp các UI và API có thể nhúng.
-- **Quản trị và Bảo mật (Responsible AI):** Đảm bảo tuân thủ quy định, kiểm soát truy cập và bảo mật dữ liệu qua Guardrails & Governance.
-- **Tính năng ứng dụng (BI & Automation):** Cung cấp Dashboards, Scenarios, Insights. Hỗ trợ các luồng tự động hóa cho nhiều phòng ban như Sales, Marketing, HR và Support.
-
-> **Trải nghiệm bản thân:**
-> Với việc mình là người không thích phải viết báo cáo hay tổng hợp log sau mỗi chặng dự án, việc có một "đại lý AI" lo liệu toàn bộ các tác vụ này thực sự giúp bản thân mình tối ưu hiệu suất làm việc. Nó cho phép mình tập trung toàn lực vào việc tư duy luồng dữ liệu (data flow) thay vì kẹt lại trong các tác vụ hành chính.
-
----
-
-### 6. Enterprise-Grade Multi-Agent System
-*Diễn giả: Chị Vy Lâm*
-
-![Vy Lam](/FCAJ%20May%2023%20assets/Vy%20Lam.jpg)
-
-**Vấn đề cốt lõi:** 
-Chị Vy đã phân tích các mô hình đánh giá tín dụng truyền thống không phù hợp với thực tế của startup (yêu cầu lịch sử tài chính dài hạn, tài sản thế chấp trong khi startup có mô hình mới, dữ liệu phi cấu trúc).
-
-**Giải pháp đa tác tử (Multi-Agent Paradigm):** 
-Xây dựng "Ủy ban tín dụng ảo" với các tác tử chuyên biệt (Tài chính, Thị trường, Đội ngũ, Rủi ro, Tuân thủ) để phân tích đa chiều thay vì dùng một mô hình đơn lẻ.
-
-**Hiệu quả (ROI):** 
-Việc chuyển đổi sang hệ thống đa tác tử giúp tối ưu hóa đáng kể quy trình vận hành, giảm chi phí và thời gian xử lý.
+> Kỹ thuật này nhắc nhở mình rằng: Công nghệ mới luôn đi kèm rủi ro bảo mật mới. Đừng bao giờ ưu tiên sự tiện lợi của AI mà đánh đổi bằng việc public các endpoint nhạy cảm.
 
 ---
 
 ## Tổng Kết
 
-![Conclusion](/FCAJ%20May%2023%20assets/Conclusion.jpg)
+![Conclusion](/FCAJ%20June%2027%20assets/conclusion.jpg)
 
-Đi nghe một vòng, trải nghiệm lớn nhất mình nhận được là một sự thay đổi về nhiều góc nhìn. Không còn tư duy phụ thuộc tuyệt đối vào máy móc, không còn cắm đầu nhồi nhét dữ liệu vô tội vạ. 
+Sau sự kiện, mình rút ra được tư duy cốt lõi: **AI Agent không thay thế con người, nhưng người dùng AI Agent sẽ thay thế người không tận dụng nó.**
 
-Qua đó, kinh nghiệm mình rút ra được là chắc chắn phải lôi hệ thống ra, kiểm tra lại cấu hình nén của CloudFront, tinh chỉnh lại tham số Temperature, và vẽ lại toàn bộ luồng xử lý AI theo hướng thiết kế chấp nhận sai số. 
+Kinh nghiệm rút ra là phải bắt tay vào thiết lập hạ tầng quan sát (Observability) thật tốt, đảm bảo mọi kết nối MCP phải nằm trong VPC an toàn, và quan trọng nhất là thiết kế luồng xử lý AI sao cho con người luôn nắm quyền kiểm soát cuối cùng (Human-in-the-loop).
 
-**Không quá quan trọng code sao cho chạy, mà là thiết kế sao cho hệ thống đủ tốt để phù hợp với yêu cầu của doanh nghiệp.**
+Không chỉ là xây dựng công cụ, mà là thiết kế một hệ sinh thái vận hành tự động và bảo mật.

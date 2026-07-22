@@ -1,75 +1,132 @@
 ---
-title: "4.1. Báo cáo thu hoạch: Event First Cloud AI Journey (09/05/2026)"
+title: "4.1. Báo cáo Tổng kết: Event CD AWS"
 weight: 1
 ---
 
-## Báo cáo thu hoạch: Những Kiến Thức Bản Thân Học Được Qua Event First Cloud AI Journey ngày 09/5/2026
+## Báo cáo Tổng kết: “Event CD AWS”
 
-Chào mọi người,
+### Mục tiêu Sự kiện
+- Chia sẻ kiến thức thực tế, kỹ năng và kinh nghiệm từ các diễn giả trong ngành
+- Tạo cơ hội kết nối, thảo luận và trao đổi ý tưởng giữa những người tham gia
+- Cung cấp những góc nhìn giá trị để hỗ trợ học tập và phát triển nghề nghiệp
+- Truyền cảm hứng cho người tham dự thông qua những câu chuyện và bài học thực tế từ các dự án thực tế
 
-Hôm nay mình muốn ngồi lại, gõ vài dòng recap về sự kiện công nghệ **First Cloud AI Journey** diễn ra vào ngày 09/5/2026 vừa qua. Mục đích chính của sự kiện là chia sẻ phương pháp học tập, nghệ thuật giao tiếp với AI, sức mạnh của AI Agent và xây dựng văn hóa học tập liên tục.
-
-Dưới đây là 4 bài học, 4 trải nghiệm thực tế từ các diễn giả đã mang lại cho mình nhiều góc nhìn mới để thay đổi tư duy và nâng cao hiệu suất làm việc với AI.
-
----
-
-### 1. Steal the Formula Used by Social Media
-*Diễn giả: Anh Huỳnh Hoàng Long (Cloud Engineer, eCloudvalley Vietnam)*
-
-![Huynh Hoang Long](/images/4-EventParticipated/event-1/session1.jpg)
-
-**Nội dung cốt lõi:**
-"Humans fear losing more than they enjoy gaining" (Con người sợ mất mát hơn là thích được nhận thêm). Bằng cách khám phá bí quyết và công thức (Formula) từ các mạng xã hội để thu hút người dùng, chúng ta có thể áp dụng các cơ chế tâm lý này vào việc học. Cụ thể là lập chuỗi (streak) và tự thưởng cho bản thân nhằm duy trì động lực và kỷ luật liên tục.
-
-> **Trải nghiệm bản thân:**
-> Mình nhận ra việc học không cần phải gò ép mà có thể "hack" bằng các công cụ tâm lý học mượn từ các nền tảng mạng xã hội. Việc thiết lập chuỗi học tập (Streak) và lợi dụng "fear of loss" giúp duy trì thói quen học công nghệ mới mỗi ngày mà không bị ngắt quãng.
+### Diễn giả
+- **Huỳnh Thái Linh** – FCAJ
+- **Huỳnh An Khương**, **Mai Quốc Anh**, **Nguyễn Trần Minh Quân** - FCAJ Challenger
+- **Nguyễn Thị Quỳnh Như** – FCAJ
+- **Trần Nghĩa** - FCAJ
+- **Trần Minh Quân** - FCAJ
+- **Phạm Khắc Uy** - FCAJ
 
 ---
 
-### 2. Nghệ thuật giao tiếp với AI & Automated Prompt Engineering
-*Diễn giả: Anh Nguyễn Tuấn Thịnh (DevOps Engineer Intern, STYL Solution Pte.Ltd)*
+## Những Điểm Nổi Bật
 
-![Nguyen Tuan Thinh](/images/4-EventParticipated/event-1/session2.jpg)
+### Chủ đề 1: Nâng cao Kỹ năng AWS của Bạn với Cloud Quest và FLoCI
 
-**Nội dung cốt lõi:**
-Một lệnh chung chung sẽ sinh ra kết quả chung chung, gây lãng phí token. Một câu lệnh chuẩn cần có: Vai trò (Role), Hướng dẫn (Instruction), Ngữ cảnh (Context), Dữ liệu đầu vào, Định dạng đầu ra, Ví dụ và Các ràng buộc. Hơn nữa, nên áp dụng nguyên tắc yêu cầu AI NÊN LÀM GÌ (DOs) thay vì KHÔNG NÊN LÀM GÌ (DON'Ts). Sự kết hợp với các kỹ thuật nâng cao như Chain-of-Thought, Self-Consistency và RAG sẽ giúp AI xử lý logic cực tốt.
+**1. Những Thách thức khi Học thực hành AWS**
+- Hiểu rõ những thách thức chung mà sinh viên gặp phải khi học AWS thông qua trải nghiệm thực tế.
+- Xác định rào cản giữa kiến thức lý thuyết và triển khai cloud trong thực tế.
+- Khám phá tầm quan trọng của việc học thực hành trong quá trình phát triển kỹ năng cloud.
 
-> **Trải nghiệm bản thân:**
-> Kỹ năng Prompting quyết định trực tiếp đến chất lượng phản hồi từ AI. Mình bắt đầu cấu trúc lại cách đặt câu hỏi cho ChatGPT, Claude hay Amazon Q trong công việc hàng ngày theo chuẩn framework đã học để có câu trả lời chính xác nhất. Hơn nữa, kiến trúc Proptimizer là một ví dụ tuyệt vời về việc áp dụng Serverless (API Gateway/Lambda/DynamoDB) kết hợp Bedrock với chi phí nền tảng $0.
+**2. AWS Cloud Quest**
+- Giới thiệu về AWS Cloud Quest như một nền tảng học tập thực hành và tương tác.
+- Học các khái niệm AWS thông qua các thử thách thực tế và tình huống thực tế.
+- Xây dựng kiến thức cloud thông qua việc học qua trải nghiệm thay vì chỉ học lý thuyết.
 
----
+**3. Mã nguồn mở FLoCI**
+- Tổng quan về FLoCI như một sáng kiến mã nguồn mở cho việc học tập và cộng tác về cloud.
+- Cơ hội để sinh viên tham gia với cộng đồng cloud và các tài nguyên học tập.
+- Khuyến khích chia sẻ kiến thức và phát triển kỹ năng thực tế thông qua các đóng góp cho mã nguồn mở.
 
-### 3. Growth Mindset
-*Diễn giả: Anh Nguyen Khang (Cloud Solution Architect, Cloud Kinetics Vietnam)*
-
-![Nguyen Khang](/images/4-EventParticipated/event-1/session3.jpg)
-
-**Nội dung cốt lõi:**
-Luôn đặt câu hỏi "Tại sao?" – sự tò mò chính là tài sản lớn nhất. Không chấp nhận mọi thứ như một lẽ dĩ nhiên. Ở giai đoạn đầu của việc học, sai lầm là những bài học giá trị, không phải là sự thất bại. Khoảnh khắc ngừng học hỏi là lúc bị tụt lại phía sau.
-
-> **Trải nghiệm bản thân:**
-> Giá trị to lớn nhất của "Growth Mindset" là mình không còn ngại sai sót. Mỗi lỗi sai đều là một bài học đắt giá ở giai đoạn đầu. Điều này mang lại sự tự tin khi đối mặt với những công nghệ và thách thức mới.
-
----
-
-### 4. Developer Agent
-*Diễn giả: Chị Nguyen Phuong Thao (Cloud Engineer Intern, VIB)*
-
-![Nguyen Phuong Thao](/images/4-EventParticipated/event-1/session4.jpg)
-
-**Nội dung cốt lõi:**
-Ứng dụng AI Agent vào quy trình phát triển phần mềm đòi hỏi sự kỷ luật. Quy trình 4 bước của Dev Agent bao gồm: (1) Khởi động Dev Agent tự động tìm các Story trạng thái Approved, (2) Bẻ gãy Story thành các Subtasks cực kỳ chi tiết, (3) Code chính xác không đoán mò, (4) Đổi trạng thái Story thành "Ready for Review" sau khi hoàn thiện.
-
-> **Trải nghiệm bản thân:**
-> Mình thấy được tiềm năng cực lớn của việc áp dụng Agent vào xử lý code. Không chỉ để chat, AI có thể giúp xử lý kỷ luật các quy trình phát triển phần mềm từ khi nhận task đến khi hoàn thành code, giúp tăng năng suất và giảm thiểu sai sót đáng kể.
+**4. Kết hợp Cloud Quest và FLoCI Một cách Hiệu quả**
+- Tận dụng Cloud Quest để học thực hành AWS có cấu trúc.
+- Sử dụng FLoCI để mở rộng việc học thông qua sự tham gia và cộng tác với cộng đồng.
+- Tạo ra một lộ trình học tập cân bằng, kết hợp giữa thực hành có hướng dẫn và trải nghiệm thực tế.
+- Tối đa hóa sự phát triển kỹ năng cloud thông qua cả hai nền tảng.
 
 ---
 
-## Tổng Kết
+### Chủ đề 2: Hackathon – Rất Nhiều Niềm Vui, Sửa Lỗi và Trải Nghiệm Học Tập
+- Hiểu về Hackathon
+- Học qua Thực hành
+- Xây dựng Dự án cho Portfolio
+- Tích lũy Kinh nghiệm Thực tế
 
-![Event Photo 1](/images/4-EventParticipated/event-1/event_09_05(1).jpg)
-![Event Photo 2](/images/4-EventParticipated/event-1/myself.jpg)
+---
 
-Sự kiện First Cloud AI Journey là một trải nghiệm mở mang tầm mắt, không chỉ về mặt công nghệ mà còn về tư duy phát triển bản thân. Các diễn giả đã truyền tải nguồn năng lượng tươi mới, chia sẻ những góc nhìn cực kỳ thực tế từ kinh nghiệm cá nhân. 
+### Chủ đề 3: Tại sao Nó là “Bắt buộc phải có” đối với Sự nghiệp, Cuộc sống Sinh viên, và Mọi thứ xung quanh.
 
-Tổng thể, sự kiện đã giúp mình thay đổi sâu sắc cách tiếp cận việc học, cũng như cung cấp các phương pháp tối ưu hóa năng suất bằng trí tuệ nhân tạo, tạo động lực to lớn cho hành trình phát triển sắp tới.
+**1. Hãy Nói về Sự Tự tin**
+- Hiểu tự tin là gì
+- Tại sao tự tin lại quan trọng trong cuộc sống hàng ngày
+
+**2. Cái giá của Sự Thiếu Tự tin trong Cuộc sống Sinh viên**
+- Tác động của sự thiếu tự tin đối với việc học và các cơ hội
+- Những thách thức phổ biến mà sinh viên phải đối mặt
+
+**3. Khoa học đằng sau Sự Khó khăn**
+- Các yếu tố tâm lý ảnh hưởng đến sự tự tin
+- Hiểu rõ nguồn gốc của sự thiếu tự tin
+
+**4. Sức mạnh của Sự Tự tin – Tại sao Nó Lại Cần thiết**
+- Lợi ích của sự tự tin trong học thuật và sự nghiệp
+- Xây dựng khả năng phục hồi và phát triển bản thân
+
+**5. Cách “Hack” Sự Tự tin Hàng ngày**
+- Các chiến lược thực tế để xây dựng sự tự tin
+- Những thói quen nhỏ tạo ra sự cải thiện lâu dài
+
+**6. Tổng kết**
+- Những bài học chính và điều đọng lại
+
+---
+
+### Chủ đề 4: Tử Vi Đại Việt
+
+**1. Giới thiệu Sản phẩm**
+- Giải mã vận mệnh
+- Thấu hiểu bản ngã bên trong bạn
+
+**2. Khám phá những Hiểu biết về Chiêm tinh học**
+- Khám phá những bí mật của vũ trụ
+- Tìm hiểu cách năng lượng từ các chòm sao ảnh hưởng đến cuộc sống
+
+**3. Trải nghiệm Được hỗ trợ bởi AI**
+- Được tạo bởi AI
+- Xem cùng lời khuyên gợi ý
+
+---
+
+### Chủ đề 5: Tảng Băng Chìm của Một Dự Án – DevOps Trước Thảm Họa
+- Những thách thức tiềm ẩn trong các dự án phần mềm
+- Vai trò của DevOps trong việc ngăn ngừa thất bại
+- Xác định rủi ro trước khi chúng trở thành thảm họa
+- Xây dựng các quy trình phát triển đáng tin cậy hơn
+
+---
+
+### Chủ đề 6: Tảng Băng Chìm của Sự Trì hoãn
+- Hiểu về sự trì hoãn và các nguyên nhân tiềm ẩn
+- Tác động của sự trì hoãn đối với kết quả học tập và làm việc
+- Nhận diện các hành vi trì hoãn phổ biến
+- Chiến lược vượt qua sự trì hoãn và cải thiện năng suất
+
+---
+
+## Bài học rút ra (Lessons Learned)
+
+Tham gia sự kiện này mang lại cho tôi nhiều góc nhìn mới mẻ và những kinh nghiệm thực tế quý giá:
+
+- **Kỹ năng thực hành với Cloud:** Hiểu rõ hơn tầm quan trọng của việc học qua thực hành (hands-on) thông qua các nền tảng như AWS Cloud Quest thay vì chỉ học lý thuyết.
+- **Tư duy giải quyết vấn đề:** Các cuộc thi Hackathon là cơ hội tuyệt vời để rèn luyện kỹ năng xây dựng sản phẩm thực tế, làm việc nhóm và xử lý lỗi.
+- **Tầm quan trọng của DevOps:** Nhận thức được “tảng băng chìm” trong các dự án phần mềm và vai trò then chốt của DevOps trong việc phát hiện và ngăn chặn rủi ro từ sớm.
+- **Phát triển bản thân:** Sự tự tin và khả năng vượt qua sự trì hoãn là những yếu tố quan trọng giúp tối ưu hóa hiệu suất làm việc và học tập.
+- **Ứng dụng AI:** Hiểu được cách ứng dụng AI để tạo ra các trải nghiệm mới lạ và cá nhân hóa cho người dùng.
+
+### Một số hình ảnh sự kiện
+*(Ảnh sự kiện 1)*
+*(Ảnh sự kiện 2)*
+
+> **Nhìn chung, sự kiện không chỉ cung cấp kiến thức kỹ thuật mà còn giúp tôi định hình lại tư duy về thiết kế ứng dụng, hiện đại hóa hệ thống và cộng tác đa nhóm.**

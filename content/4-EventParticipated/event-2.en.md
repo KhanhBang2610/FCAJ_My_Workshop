@@ -1,109 +1,83 @@
 ---
-title: "4.2. Event Recap: FCAJ Community Day"
+title: "4.2. Event Recap: FCAJ Community Day (June 27, 2026)"
 weight: 2
 ---
 
-## Event Recap: Personal Learnings from FCAJ Community Day on May 23, 2026
+## Event Recap: Personal Learnings from FCAJ Community Day on June 27, 2026
 
 Hello everyone,
 
-Today I wanted to sit down and type out a quick recap of the **FCAJ Community Day** tech event that took place on May 23.
+Today I am sitting down again to type out a quick recap of the **FCAJ Community Day** tech event that took place this past June. This event painted a comprehensive picture of how enterprises apply AI in reality, from infrastructure operations to human resource management.
 
-Below are 6 lessons and 6 real-world experiences from the speakers that provided me with new perspectives—not only on technology but also on how to handle work correctly to achieve the best performance.
+Below are 5 lessons and 5 real-world experiences from the speakers that brought me new perspectives on the Agentic AI era.
 
 ---
 
-### 1. The Uncontrollability of LLMs: Temp = 0 Cannot Stop AI from "Flipping"
-*Speaker: Duc Dao (Solution Architect)*
+### 1. Deep Response Engine: Shifting from 'Alert' to 'Action'
+*Speaker: Steve Tran*
+
+![Steve Tran](/FCAJ%20June%2027%20assets/Steve%20Tran.jpg)
 
 **Core Content:**
-Mr. Duc Dao's talk gave me a different perspective. For a long time, when coding AI integration flows, I always assumed that setting the `temperature = 0` parameter meant the system would return a 100% perfectly formatted JSON every single time. But the truth is: LLMs can still output different results! The root cause lies in floating-point errors on GPU architectures and the batching optimization mechanisms of providers.
+Mr. Steve pointed out the 'complexity wall' that modern cloud systems are facing. Instead of relying on alert-driven systems that keep ops teams constantly 'on fire', the solution is to shift to an Action-driven system. With the Deep Response Engine, AI not only reports errors but also automatically conducts investigations and proposes mitigation plans, reducing incident response time from hours to mere minutes.
 
 > **Personal Experience:**
-> Hearing about the hardware-level GPU cause really changed my understanding. AI is ultimately about probability, not linear mathematical functions. Instead of trying to force it into a rigid machine, Mr. Duc's advice is to use `temperature = 0.1` to avoid vocabulary repetition, combine it with JSON mode, and most importantly: **Design backend systems that accept output variability**. Clearly, anticipating errors and implementing robust Exception Handling is crucial.
+> I realized that startups often get stuck building 'BC ideas' without 'Customer Champions'. The biggest lesson is to tie solutions to actual enterprise problems (like F88, FPT), where every minute of downtime equals money lost.
 
 ---
 
-### 2. Stop Being an "Internet Garbage Collector"
-*Speaker: Tinh Truong (Platform Engineer)*
+### 2. Voice Agents: When AI Speaks Human
+*Speakers: Trung, Kiet Tran, and Nghi Danh Hoang Hieu*
 
-![Tinh Truong](/FCAJ%20May%2023%20assets/Tinh%20Truong.jpg)
+![Trung Vu](/FCAJ%20June%2027%20assets/Trung%20Vu.jpg)
 
 **Core Content:**
-Mr. Tinh Truong exposed a harsh truth: When an AI model gives a "nonsensical" answer, it's usually not because the AI is bad, but because we provided the wrong context. Many people are stuck in "Internet Puller" syndrome—shoving a chaotic, redundant mess of information in the AI's face or giving vague, unconstrained requests. His proposed solution is to build a **"Second AI Brain"** using a standard flow: `Store -> Retrieve -> Generate -> Learn`.
+Moving from traditional IVRs and Chatbots, we have entered the era of AI Voice Agents. Mr. Trung emphasized the challenge of the Vietnamese language being a 'low resource language'. Instead of using full speech-to-speech models (which are often unstable), the solution is a 3-step architecture: `Speech-to-Text -> LLM (logic processing) -> Text-to-Speech (voice generation)`. Especially when building for banks, strict adherence to Audit logs, Versioning, and Knowledge bases is essential to prevent the AI from hallucinating.
+
+---
+
+### 3. AWS DevOps Agent: The Operations Assistant That Never Sleeps
+*Speakers: Ms. Bao & Mr. Nguyen*
+
+![Bao and Nguyen](/FCAJ%20June%2027%20assets/Ms%20Bao%20and%20mr%20Nguyen.jpg)
+
+**Core Content:**
+This was my favorite part due to its high applicability for DevOps engineers. The system uses the concept of an Agent Space to learn the topology of the infrastructure. When an incident occurs (e.g., an ECS task failure), the agent automatically traces the root cause and provides a mitigation plan, leaving the operator only to approve it (Human-in-the-loop).
 
 > **Personal Experience:**
-> Honestly, I felt called out! How many times have I copied an entire, massive document file, thrown it into AI Agent tools like Cursor or Trae, and then gotten frustrated when it didn't code the way I wanted? This sharing helped me redefine how to build RAG (Retrieval-Augmented Generation) systems. The quality of a Vector DB depends entirely on how we clean and chunk the data in the "Store" step, not on how many billion parameters the model has.
+> A prerequisite is that the system must have strong Observability (clear logs, metrics, and alarms). If you lack baseline data, AI is just 'a blind man examining an elephant', generating information without specific context. The cited 77% reduction in MTTR at a university is a very convincing figure.
 
 ---
 
-### 3. 36 hours, one product
-*Speaker: Team VIB*
+### 4. Amazon Quick Suite: Redefining HR Productivity
+*Speakers: Mr. Truong & Ms. Minh Anh*
 
-![Team VIB](/FCAJ%20May%2023%20assets/Team%20VIB.jpg)
+![Truong Tran](/FCAJ%20June%2027%20assets/Truong%20tran.jpg)
 
 **Core Content:**
-Team VIB shared the journey of the UTMorpho project development team at LotusHacks, the largest hackathon in Vietnam. They shared the process of transforming a raw idea into a real product in just 36 high-pressure hours, while emphasizing lessons on endurance and teamwork.
-
-As the winning team in the AWS Track division, they shared significant milestones—from defining the problem to pivotal failures. Finally, they shared the future directions to integrate the product into actual workflows and continue spreading the spirit of learning through open-source platforms.
+The combination of Amazon Quick and HR workflows. More than just a chatbot tool, Quick helps automate CV screening (OCR), cross-referencing with JDs, and scoring candidates based on technical/soft skill scales. It transforms HR from 'administrative workers' to 'human resource strategists' by freeing them from repetitive tasks.
 
 ---
 
-### 4. CloudFront is Not Just a CDN, it’s an Application Protection and Optimization Platform
-*Speaker: Nguyen Tuan Thinh (DevOps Engineer)*
+### 5. Building Secure MCP Connections
+*Speakers: Toan Nguyen & Mr. Nghi*
 
-![Nguyen Tuan Thinh](/FCAJ%20May%2023%20assets/Thinh%20Nguyen.jpg)
+![Toan Nguyen](/FCAJ%20June%2027%20assets/Toan%20Nguyen.jpg)
 
 **Core Content:**
-CDNs are often viewed merely as auxiliary infrastructure, but Mr. Thinh proved the opposite. Besides the power of over 700 global PoPs that reduce latency, CloudFront has the ability to stop DDoS attacks right at the Edge instead of waiting 3-4 minutes like before.
-
-Especially with the Flat-rate pricing update (launched November 18, 2025), monthly bills become predictable. Coupled with caching and data compression, file sizes can be reduced by up to 82%.
-Furthermore, it provides reliability by automatically routing traffic to a Secondary Origin when the primary one fails, as well as serving stale content from cache when the Origin times out, ensuring an uninterrupted user experience.
+The Model Context Protocol (MCP) acts as a bridge for AI to 'expand' into the world (Jira, Zalo, Gmail, AWS). However, the security risks are massive. The speakers demonstrated how to set up VPC Private Connectivity, use ALBs, and implement TLS encryption to ensure the MCP server remains safely in a Private Subnet, preventing sensitive data from being publicly exposed to the Internet.
 
 > **Personal Experience:**
-> I realized that sometimes, exhaustively optimizing code doesn't save as many EC2 or ALB resources as configuring the external network layer correctly. Reducing static payload bandwidth by 82% means never having to fear a skyrocketing AWS bill due to traffic spikes.
-
----
-
-### 5. Delegating Boredom to Amazon Quick Suite
-*Speaker: Pham Hai Anh*
-
-![Pham Hai Anh](/FCAJ%20May%2023%20assets/Hai%20Anh.jpg)
-
-**Core Content:**
-Under the Automation theme, Mr. Hai Anh introduced Amazon Quick Suite (Agentic AI). This tool connects directly to over 40 different data sources, automating thousands of tasks across third-party applications. From scheduling meetings to auto-drafting emails and creating accurate Minutes of Meeting (MoM), its standout features include:
-- **Data & Knowledge:** Uses company data via Spaces/datasets, combines world knowledge, supports user-uploaded files, connects to databases/data warehouses, and integrates 40+ Data connectors.
-- **Actions:** Capable of executing thousands of actions in third-party apps, providing embeddable UIs and APIs.
-- **Responsible AI:** Ensures compliance, access control, and data security using Guardrails and strict Governance.
-- **BI & Automation:** Provides Dashboards, Scenarios, Insights. Supports automated flows for departments like Sales, Marketing, HR, and Support.
-
-> **Personal Experience:**
-> As someone who strongly dislikes writing reports or aggregating logs after every project phase, having an "AI agent" handle all these routine tasks truly optimizes my performance. It allows me to fully focus my brainpower on thinking about data flows rather than getting stuck in administrative chores.
-
----
-
-### 6. Enterprise-Grade Multi-Agent System
-*Speaker: Vy Lam*
-
-![Vy Lam](/FCAJ%20May%2023%20assets/Vy%20Lam.jpg)
-
-**Core Problem:** 
-Ms. Vy analyzed how traditional credit scoring models are unsuitable for the reality of startups (which require long-term financial histories and collateral, while startups have novel models and unstructured data).
-
-**Multi-Agent Paradigm:** 
-Building a "Virtual Credit Committee" with specialized agents (Finance, Market, Team, Risk, Compliance) to conduct multidimensional analysis instead of relying on a single model.
-
-**ROI:** 
-Transitioning to a multi-agent system significantly optimizes operational workflows, reducing costs and processing times.
+> This technique reminded me that new technologies always bring new security risks. Never prioritize the convenience of AI at the expense of exposing sensitive endpoints to the public.
 
 ---
 
 ## Conclusion
 
-![Conclusion](/FCAJ%20May%2023%20assets/Conclusion.jpg)
+![Conclusion](/FCAJ%20June%2027%20assets/conclusion.jpg)
 
-After attending these sessions, the biggest takeaway I received was a "Reset" in perspective. No more absolute reliance on machines, and no more mindlessly cramming data. 
+After the event, I drew a core realization: **AI Agents will not replace humans, but humans who use AI Agents will replace those who don't.**
 
-From these experiences, my key takeaway is that I definitely need to review my systems, check CloudFront compression configurations, fine-tune the Temperature parameters, and redesign entire AI processing workflows to accept variability. 
+My takeaway is that we must start establishing robust Observability infrastructure, ensure all MCP connections reside within a secure VPC, and most importantly, design AI processing workflows so that humans always retain the final control (Human-in-the-loop).
 
-**It's no longer just about writing code that runs; it's about designing systems robust enough to meet enterprise requirements.**
+It's not just about building tools, but designing an automated and secure operational ecosystem.

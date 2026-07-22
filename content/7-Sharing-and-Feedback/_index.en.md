@@ -1,32 +1,31 @@
 ---
-title: "7. Share and Feedback"
+title: "7. Sharing and Feedback"
 weight: 7
 ---
 
-
-After a period of more than 100 days of learning and working at the company, I would like to share my personal perspectives and experiences during my participation in the **First Cloud AI Journey** internship program, as well as throughout the development of the **Smart Media Analytics - CloudForge** project.
-
+After more than 100 days of learning and interning, I would like to express my deep gratitude and share my perspectives from the **First Cloud AI Journey** program, as well as the development process of our project with the **WLA team**.
 
 ### Overall Assessment
 
-**1. Working Environment & Community**  
-The program provides an extremely dynamic learning environment. The AWS community organizes many high-quality events every weekend, creating opportunities for me to broaden my horizons and learn a lot of new knowledge from industry experts. However, due to the massive appeal of the program and the large number of interns, registration slots to attend events and work directly at the office usually run out very quickly. Sometimes I also feel a bit regretful because I could not attend all the events as well as most of the direct in-office working sessions that I had registered for.
+**1. Work Environment & Community**  
+The program has fostered a highly professional and dynamic learning ecosystem. The weekend events organized by the AWS community were of exceptional quality, offering opportunities to learn directly from industry experts. However, due to the program's massive popularity, offline office slots and event registrations filled up incredibly fast. It is a slight regret that I couldn't participate in every offline activity I signed up for.
 
-**2. Support from mentors / team admins**  
-Acting as Cloud experts as well as having profound knowledge in the AI field, the mentors provided extremely valuable and logically rigorous contributions when we showed our architectural diagrams or presented project ideas. In addition, the events helped me not only discover the beauty of new technologies within the AWS environment, but also gain more experiences and perspectives from deeply specialized industry professionals, as well as learn many essential soft skills for life such as self-confidence or managing time reasonably for both work and life.
+**2. Mentorship & Support**  
+Leveraging their deep expertise in Cloud and system architecture, the mentors provided strategic and logically rigorous feedback throughout our architectural design and project development phases. Furthermore, the sharing sessions went beyond AWS technical knowledge, equipping interns with essential soft skills such as problem-solving, confidence, and effective time management.
 
-**3. Facilities and offline experience**  
-Every time I got to participate in working directly at the office was a very novel and meaningful experience, although the number of visits was not yet enough for me to feel a sense of familiarity or to be able to interact more with my teammates. If possible, I hope to have more opportunities to go to the office to work together with my friends and the mentors.
+**3. Facilities & Offline Experience**  
+Every working session at the corporate office was a highly inspiring and valuable real-world experience. Although the frequency of offline visits wasn't high enough to build the deepest bonds, they were excellent opportunities for direct networking. I hope future iterations of the program can expand the offline working hours to enhance team interaction and collaboration.
 
-**4. Opportunities for learning & skill development**  
-Through the program, I was trained in a practical teamwork process: from ideation, architecture design, building the database for the system, designing the web operation flow, to the point of deploying the system onto the AWS environment. Through that, I also got acquainted with many novel technologies, approached the best practices in the industry, gained more experiences and perspectives from deeply specialized industry professionals, as well as learned many essential soft skills for life such as self-confidence or managing time reasonably for both work and life.
+**4. Learning Journey & Skill Development**  
+The program perfectly simulated a corporate teamwork workflow: from requirement analysis, architectural design, database modeling, to deploying a comprehensive system on AWS. This process allowed me to grasp industry best practices, sharpen my systems thinking, and perfect my core technical skillset.
 
-**5. Alignment between the project and development orientation**  
-The **Smart Media Analytics - CloudForge** project was truly an ideal playground, perfectly combining the technology trends I am passionate about: Generative AI and BackEnd Development. This practical combat experience has firmly solidified my career orientation, as well as added 1 product to help me hold an advantage in the competitive job market after graduation.
+**5. Career Path Alignment**  
+The **WLA team**'s project served as an ideal practical battleground, harmoniously combining Serverless Architecture and Backend Development. Solving real-world problems through this experience has solidified my career orientation and yielded a fully functional technology product that will serve as a strong competitive advantage in the job market.
 
-### Proposals & Desires
-In order to help the program become increasingly perfect and create conditions for a more comprehensive evaluation of interns' capabilities, I have a few contributing perspectives as follows:
-- **Diversifying the criteria for evaluating internship completion:** With the massive interest from the community, the slots for working at the office or offline events usually reach their limit quickly. Therefore, the program might consider expanding further on metrics to measure the remote working process. A typical example would be reviewing the frequency and quality via **Git commit history**, which helps provide clear evidence for the discipline and continuity of the teams even when not working directly together.
-- **Recognizing proactive engagement on the system:** The interaction frequency and the number of attempt times to register for participation on the portal are also a good metric for an intern's eagerness to learn, even when the system no longer has slots to approve.
-- **Encouraging efforts that exceed expectations:** Having an additional mechanism to recognize groups that complete beyond the initial targets, for example, our group proactively finished 4 technical blog posts instead of the minimum requirement of 3. Diversifying the evaluation perspectives will help reflect the internship picture in the most objective and complete way.
-- Finally, thank you to the organizers and mentors for creating a particularly useful launchpad. Wishing the FCAJ community continued success in spreading many wonderful values!
+### Proposals & Recommendations
+To contribute to the sustainable growth of the program in upcoming seasons, I would like to offer the following suggestions:
+- **Diversify Evaluation Criteria:** Given the physical constraints of offline spaces, the organizing committee could consider integrating remote performance metrics. For instance, analyzing the frequency and quality of contributions via **Git commit history** would accurately reflect the discipline and consistency of remote teams.
+- **Acknowledge Proactive Engagement:** The frequency of system interactions and efforts to register for events on the portal should be recognized as a testament to an intern's eagerness to learn, even when event slots are fully booked.
+- **Reward Exceptional Effort:** Introduce a mechanism to specially recognize individuals or teams that exceed baseline KPIs. For example, our team proactively published 4 technical blogs instead of the minimum requirement of 3. A multi-dimensional evaluation framework will ensure a fair and comprehensive assessment.
+
+Finally, I would like to extend my sincere thanks to the organizing committee and the mentors for dedicating their efforts to building such a tremendous career launchpad. I wish the FCAJ community continued growth and success in spreading practical values!

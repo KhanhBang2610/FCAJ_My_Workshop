@@ -15,7 +15,3 @@ Below is a summary of 3 technical blog posts focusing on how to apply AWS servic
 ### 3. [Automating medical records digitization with Amazon Bedrock Data Automation and AWS HealthLake]({{< ref "3.3-Blog3.en.md" >}})
 **Summary:** Exploring advanced technology architectures for the healthcare sector. This blog guides you through combining Generative AI (Amazon Bedrock Data Automation) and AWS HealthLake to automate the conversion of unstructured medical documents (paper, PDFs) into digital data that can be easily searched, analyzed, and managed.
 
-
-### 4. [Deep Dive into AWS Bedrock & Vector Embedding]({{< ref "3.4-Blog4.en.md" >}})
-**Summary:** This post dives deep into the RAG architecture, decoding how Amazon Bedrock transforms raw text into coordinate vectors (Embedding). It helps Backend developers understand the semantic search process and critical considerations for optimizing costs and performance when building AI systems.
-

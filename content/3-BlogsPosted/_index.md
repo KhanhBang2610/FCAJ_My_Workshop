@@ -15,7 +15,3 @@ Dưới đây là danh sách tổng hợp 3 bài blog công nghệ tập trung v
 ### 3. [Tự động số hóa hồ sơ bệnh án với Amazon Bedrock Data Automation và AWS HealthLake]({{< ref "3.3-Blog3.md" >}})
 **Tóm tắt:** Khám phá kiến trúc công nghệ tiên tiến dành cho lĩnh vực y tế. Bài blog hướng dẫn cách kết hợp giữa Generative AI (Amazon Bedrock Data Automation) và AWS HealthLake để tự động hóa quá trình chuyển đổi các tài liệu bệnh án y tế phi cấu trúc (giấy, PDF) thành dữ liệu số có thể tìm kiếm, phân tích và quản lý một cách dễ dàng.
 
-
-### 4. [Deep Dive vào AWS Bedrock & Vector Embedding]({{< ref "3.4-Blog4.md" >}})
-**Tóm tắt:** Bài viết phân tích sâu vào kiến trúc RAG, giải mã cách Amazon Bedrock biến đổi văn bản thô thành các vector tọa độ (Embedding). Từ đó, giúp lập trình viên Backend hiểu rõ qua trinh tìm kiếm ngữ nghĩa và các lưu ý quan trọng để tối ưu chi phí và hiệu năng khi xây dựng hệ thống AI.
-

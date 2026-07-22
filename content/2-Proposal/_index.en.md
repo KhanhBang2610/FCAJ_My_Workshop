@@ -3,98 +3,147 @@ title: "2. Proposal"
 weight: 2
 ---
 
-# Smart Media Analytics
-## Building an AI-powered Video Analysis (Semantic Search System)
+# Task Management System
+## A Serverless AWS Architecture for Secure Task Collaboration
 
 ### 1. Executive Summary
-**Smart Media Analytics (SMA)** is a local-first media management and search system designed for video editors, designers, and research teams needing rapid retrieval of media content. The system automates media ingestion, scene splitting, transcription, and AI-powered contextual description, enabling natural language search. Initially, SMA runs entirely on local machines (via Docker) to ensure privacy and cut experimental costs. For production scaling, it offers a seamless upgrade path to AWS (S3, Bedrock, RDS).
+
+The Task Management System is designed as a secure, scalable, and low-operations web application for creating, assigning, tracking, and updating work items in real time. The system uses a serverless AWS architecture so the project can focus on application features instead of server provisioning, patching, and capacity planning.
+
+The frontend is delivered through Amazon CloudFront from a private Amazon S3 bucket, with Amazon Route 53 handling DNS, AWS Certificate Manager providing TLS, and AWS WAF protecting the public edge. Users authenticate through Amazon Cognito and send GraphQL queries, mutations, and subscriptions to AWS AppSync with JWT authorization. Business logic runs on AWS Lambda, task data is stored in Amazon DynamoDB with point-in-time recovery enabled, and operational logs, metrics, and alarms are centralized in Amazon CloudWatch. The deployment flow is automated from GitHub through AWS CodePipeline, AWS CodeBuild, and AWS CloudFormation.
 
 ### 2. Problem Statement
-**What’s the Problem?** Current media libraries are scattered, and meaningless file names make manual scene searching incredibly time-consuming. Relying directly on cloud AI services for the entire pipeline from day one incurs high costs and potential data privacy risks.
 
-**The Solution:** SMA addresses this with an automated pipeline utilizing a React dashboard, FastAPI, ChromaDB, PostgreSQL, MinIO, and local AI models (Ollama, faster-whisper). Users simply type “beach sunset” to jump exactly to the desired video timestamp. When scaling to production, it seamlessly transitions to AWS services like Amazon S3, AWS Bedrock, Amazon Transcribe, and Amazon RDS PostgreSQL, managed and deployed via AWS Amplify and orchestrated by Step Functions and ECS Fargate.
+**What's the Problem?**
 
-**Benefits and Return on Investment:** The solution significantly shortens the time required to search for footage, read transcripts, and identify needed scenes, boosting the creative team’s efficiency. Users can query in natural language and get precise timestamps instead of manually reviewing files. The initial local-first approach saves cloud AI costs during development, while the clear AWS migration path ensures long-term scalability.
+Many small teams still manage tasks through chat messages, spreadsheets, or disconnected notes. This makes it difficult to know task ownership, current status, priority, and history. When the team grows, manual updates create duplicated information, missed deadlines, and limited visibility for project tracking. Traditional web application hosting can also introduce unnecessary operational work for a student or internship project: server maintenance, manual deployment steps, database backup planning, SSL setup, and monitoring configuration.
+
+**The Solution**
+
+The proposed system provides a centralized task management application backed by managed AWS services. Users sign in through Cognito, then interact with tasks through AppSync GraphQL APIs. Queries and mutations support task listing, creation, update, assignment, and completion. GraphQL subscriptions support near real-time updates so team members can see task changes without refreshing the page. Lambda functions handle backend validation and workflow logic, while DynamoDB stores task records with scalable read/write capacity and point-in-time recovery. Static website assets stay private in S3 and are served only through CloudFront. CI/CD automation reduces manual deployment effort and keeps infrastructure changes repeatable through CloudFormation.
+
+**Benefits and Return on Investment**
+
+The system improves team visibility by centralizing task data, status, ownership, and updates. Serverless services keep the operating model lightweight and cost-aware because most components scale with usage. Automated deployment shortens release time, reduces configuration mistakes, and makes the project easier to maintain after the internship period.
 
 ### 3. Solution Architecture
-The platform employs a hybrid local-to-cloud approach. In the local phase, the media ingest workflow runs in Docker Compose. When deployed to AWS, the architecture uses a serverless and managed services model.
 
-<div style="display: flex; justify-content: center; gap: 1%;">
-  <img src="/images/2-Proposal/1.SMA_architecture.png" alt="SMA Architecture 1" style="width: 38.5%; height: auto;" />
-  <img src="/images/2-Proposal/2.SMA_architecture.png" alt="SMA Architecture 2" style="width: 60.5%; height: auto;" />
-</div>
+The architecture follows a serverless pattern with separated frontend delivery, authentication, API, backend, data, observability, and CI/CD layers. The public website request is resolved by Route 53 and delivered by CloudFront from a private S3 bucket. Login requests go through Cognito. Authenticated application requests use AppSync GraphQL with JWT tokens, then AppSync invokes Lambda for business logic and DynamoDB for persistent task data. CloudWatch collects logs, metrics, and alarms across the application.
 
 **AWS Services Used:**
-- **Networking & Delivery:** Amazon Route 53 (DNS), AWS Amplify (Frontend Hosting & CDN), Amazon VPC (Network with NAT Gateway).
-- **Security & Identity:** Amazon Cognito (User Auth), AWS Secrets Manager (Credentials).
-- **Storage & Databases:** Amazon S3 (Media Storage), Amazon RDS PostgreSQL (Metadata), Amazon ElastiCache (Caching).
-- **Compute & API:** AWS App Runner (Backend API), Amazon API Gateway (Routing), Amazon ECS Fargate (Video Processing Tasks).
-- **Artificial Intelligence (AI/ML):** Amazon Bedrock (Semantic analysis & Embeddings), Amazon Transcribe (Speech-to-Text).
-- **Integration & Orchestration:** Amazon SQS & EventBridge (Queues & Events), AWS Step Functions (Workflow orchestration).
-- **DevOps & Monitoring:** Amazon ECR (Container Registry), Amazon CloudWatch & AWS X-Ray (Logging & Tracing).
+
+| AWS Service | Purpose |
+| :--- | :--- |
+| **Amazon Route 53** | Manages DNS records for the application domain. |
+| **Amazon CloudFront** | Serves the frontend globally and connects users to the private S3 origin. |
+| **Amazon S3** | Stores static website assets in a private bucket. |
+| **AWS WAF** | Protects the CloudFront distribution against common web attacks. |
+| **AWS Certificate Manager** | Provides and manages the TLS certificate for HTTPS. |
+| **Amazon Cognito** | Handles user sign-up, sign-in, JWT token issuance, and authentication. |
+| **AWS AppSync** | Provides the GraphQL API for queries, mutations, and subscriptions. |
+| **AWS Lambda** | Runs backend task workflow logic without managing servers. |
+| **Amazon DynamoDB** | Stores task, user, status, and assignment data with point-in-time recovery enabled. |
+| **Amazon CloudWatch** | Collects logs, metrics, and alarms for monitoring and troubleshooting. |
+| **AWS CodePipeline** | Automates the deployment workflow from source code changes. |
+| **AWS CodeBuild** | Builds and validates application artifacts. |
+| **AWS CloudFormation** | Provisions and updates infrastructure as code. |
+| **GitHub** | Stores source code and triggers the CI/CD pipeline. |
 
 **Component Design:**
-- **Frontend Layer:** React app managed and distributed by AWS Amplify with Route 53, authenticated via Cognito.
-- **API & Routing Layer:** API Gateway routes traffic to the FastAPI service hosted on App Runner.
-- **Processing & AI Layer:** Step Functions coordinates EventBridge and SQS to trigger ECS (Fargate) tasks for scene detection, followed by Bedrock & Transcribe for AI extraction.
-- **Data Layer:** Metadata is persisted in RDS PostgreSQL, cached in ElastiCache. Vectors and media object persistence are handled directly from the processing tasks. Secured within a VPC with a NAT Gateway.
+
+- **Frontend delivery**: Static frontend files are uploaded to a private S3 bucket and delivered through CloudFront. Route 53 maps the custom domain to the CloudFront distribution, and ACM enables HTTPS.
+- **Security edge**: AWS WAF is attached to CloudFront to filter malicious or unexpected traffic before requests reach the application.
+- **Authentication**: Cognito manages users and returns JWT tokens after login. The frontend attaches the token to GraphQL requests.
+- **API layer**: AppSync validates the JWT token and exposes GraphQL operations for task creation, update, assignment, filtering, and real-time subscription events.
+- **Backend logic**: Lambda functions implement business rules such as validating task ownership, updating task status, and preparing response payloads.
+- **Data layer**: DynamoDB stores task data and enables point-in-time recovery to protect against accidental writes or deletes.
+- **Operations**: CloudWatch receives logs and metrics from AppSync, Lambda, DynamoDB, and the deployment pipeline. Alarms can notify the team when errors or abnormal usage appear.
+- **Deployment**: Developers push code to GitHub. CodePipeline and CodeBuild package the application, then CloudFormation updates AWS resources and deploys the frontend/backend changes.
 
 ### 4. Technical Implementation
+
 **Implementation Phases:**
-- **Architectural Research:** Design the local architecture and map the data flow to the AWS services list (1 month pre-internship).
-- **Local-first Build:** Develop and refine the core logic locally using Docker Compose, integrating Ollama and faster-whisper (Month 1).
-- **AWS Cloud-ready Integration:** Incrementally replace local containers with AWS managed services like App Runner, Bedrock, and S3 (Month 2).
-- **Develop, Test, and Deploy:** Finalize the cloud infrastructure using CI/CD, set up CloudWatch monitoring, and release to production (Month 3).
+
+- **Requirement analysis and architecture design**: Define user roles, task lifecycle, GraphQL operations, security boundaries, and AWS service responsibilities.
+- **Infrastructure as code setup**: Create CloudFormation templates for S3, CloudFront, WAF, ACM, Cognito, AppSync, Lambda, DynamoDB, CloudWatch, and CI/CD resources.
+- **Frontend development**: Build the task interface, authentication screens, task list, task detail, filters, and real-time update behavior.
+- **Backend and API development**: Define GraphQL schema, connect resolvers to Lambda, implement validation logic, and integrate DynamoDB access patterns.
+- **Monitoring and security hardening**: Configure CloudWatch logs, metrics, alarms, IAM least-privilege permissions, DynamoDB PITR, and WAF rules.
+- **Testing and deployment**: Validate login, CRUD flows, subscription updates, CI/CD deployment, rollback behavior, and basic failure scenarios.
 
 **Technical Requirements:**
-- **Media Processing:** Containerized processing tasks utilizing FFMPEG for scene splitting.
-- **Cloud Infrastructure:** Practical knowledge of AWS Amplify, ECS Fargate, Step Functions, Bedrock, and RDS. Use AWS SDK to code interactions (e.g., S3 uploads, Bedrock invocations).
 
-### 5. Timeline & Milestones
+- A static web frontend that can be built and deployed to S3.
+- Cognito user pool for authentication and JWT-based authorization.
+- AppSync GraphQL schema covering task queries, mutations, and subscriptions.
+- Lambda runtime for backend logic and DynamoDB integration.
+- DynamoDB table design for tasks, users, projects, status, priority, and assignment access patterns.
+- CloudFormation templates for repeatable infrastructure provisioning.
+- CI/CD pipeline connected to GitHub for automated build and deployment.
+- CloudWatch dashboards or alarms for error tracking and operational visibility.
+
+### 5. Timeline and Milestones
+
 **Project Timeline:**
-- **Pre-Internship (Month 0):** 1 month for planning and architectural research.
-- **Internship (Months 1-3):** 3 months.
-  - **Month 1:** Build the local-first pipeline and test local AI models.
-  - **Month 2:** Design and adapt the architecture for AWS, setting up core services (S3, RDS, ECS).
-  - **Month 3:** Implement Step Functions orchestration, test full flow, and launch.
-- **Post-Launch:** Up to 1 year for further model tuning and scaling.
+
+- **Pre-implementation**: Research AWS serverless services, compare architecture options, and finalize the project scope.
+- **Month 1**: Design the solution architecture, define data model, create initial CloudFormation templates, and configure the basic frontend hosting path.
+- **Month 2**: Implement Cognito authentication, AppSync GraphQL API, Lambda functions, and DynamoDB persistence.
+- **Month 3**: Complete CI/CD, monitoring, WAF configuration, integration testing, documentation, and final project presentation.
+- **Post-launch**: Improve UI/UX, add team/project grouping, enhance audit logging, and optimize cost based on real usage.
 
 ### 6. Budget Estimation
-Deploying this comprehensive production architecture with over 20 AWS services, the budget for a small-scale or lab environment is estimated as follows:
 
-| AWS Service | Use Case | Estimated Cost/Month (USD) |
-| :--- | :--- | :--- |
-| **Amazon RDS (PostgreSQL)** | Primary Database (Multi-AZ, db.t4g.medium, 20GB) | $68.00 |
-| **AWS NAT Gateway** | Allows Private Subnet internet access (1 NAT, 24/7) | $32.40 |
-| **Amazon ElastiCache** | Cache (Multi-AZ, cache.t4g.micro, 2 nodes) | $32.00 |
-| **Amazon ECS (Fargate)** | Auto Scaling Task for Video Processing (~1 vCPU, 2GB RAM) | $15.00 |
-| **Amazon Bedrock & Transcribe** | AI, Speech-to-Text, Embeddings (Base estimate) | $15.00 |
-| **AWS App Runner** | Web Service / API (Minimum 1 instance) | $7.00 |
-| **Amazon CloudWatch & X-Ray** | Logs, Metrics, Alarms, Distributed Tracing | $5.00 |
-| **Amazon S3** | Media & Keyframe Storage (Est. ~50GB) | $2.00 |
-| **AWS Secrets Manager** | Keys & Credentials Management (5 secrets) | $2.00 |
-| **Amazon API Gateway** | REST API & WSS Push (Request-based) | $1.00 |
-| **AWS Amplify** | Hosting & CDN for Frontend | $1.00 |
-| **Amazon SQS, EventBridge, Step Functions** | Workflow Orchestration, Event Bus, Queues | $1.00 |
-| **Amazon Route 53** | DNS Management (1 Hosted Zone) | $0.50 |
-| **Amazon Cognito** | User Authentication (JWT) | $0.00 (Free Tier) |
-| **Estimated Total** | **Entire System** | **~$181.90** |
+The project is designed for a small internship-scale workload, so most usage should stay within low-cost or free-tier levels.
+
+| AWS Service | Estimated Cost / Month |
+| :--- | :--- |
+| **Route 53** | ~$0.50 for one public hosted zone, plus DNS query charges if applicable. |
+| **CloudFront & S3** | Very low for static assets and small traffic; CloudFront includes monthly free-tier allowances. |
+| **Cognito** | $0 for a small internal user base within the monthly active user free tier. |
+| **AppSync** | $0 during free-tier usage; beyond free tier, usage-based per query/mutation/real-time op. |
+| **Lambda** | $0 for low invocation volume within the Lambda free tier. |
+| **DynamoDB** | $0 for a small table within free-tier storage/provisioned capacity. |
+| **CloudWatch** | $0 if logs, metrics, and alarms stay within the free tier. |
+| **WAF** | ~$10–15/month for one Web ACL with a small rule set and low request volume. |
+| **CodePipeline, CodeBuild, CloudFormation** | Low for a small CI/CD pipeline with limited builds. |
+| **Estimated total** | **~$1–3/month** (without WAF) or **~$12–18/month** (with WAF enabled). |
 
 ### 7. Risk Assessment
+
 **Risk Matrix:**
-- **Large Media Volumes:** High impact, medium probability.
-- **Local AI Inference Speed:** Medium impact, high probability.
-- **Cloud Scaling Costs:** High impact, low to medium probability.
+
+| Risk | Impact | Probability |
+| :--- | :--- | :--- |
+| Misconfigured authentication or authorization | High | Medium |
+| GraphQL resolver or Lambda errors | Medium | Medium |
+| DynamoDB access pattern mismatch | Medium | Medium |
+| Accidental data deletion or incorrect updates | High | Low |
+| Unexpected cost from WAF, logs, or traffic spikes | Medium | Low |
+| CI/CD deployment failure | Medium | Medium |
 
 **Mitigation Strategies:**
-- **Media Volumes:** Limit batch ingests, optimize FFMPEG processing.
-- **AI Inference:** Cache results aggressively, move to AWS Bedrock if local models are too slow.
-- **Costs:** Use AWS budget alerts and monitor resource utilization closely.
+
+- Apply least-privilege IAM permissions and validate Cognito JWT authorization in AppSync.
+- Use structured logging and CloudWatch alarms for Lambda and AppSync errors.
+- Design DynamoDB keys around real task access patterns before implementation.
+- Enable DynamoDB point-in-time recovery and avoid direct manual writes in production.
+- Configure AWS Budgets and review CloudWatch log retention settings.
+- Keep infrastructure changes in CloudFormation and test the pipeline before final deployment.
 
 **Contingency Plans:**
-- If local vector search is a bottleneck, migrate to OpenSearch Serverless earlier than planned.
-- Retain basic metadata even if full media processing fails, avoiding total library loss.
+
+- Roll back failed deployments through CloudFormation and CodePipeline.
+- Restore DynamoDB records through point-in-time recovery if data is accidentally modified.
+- Temporarily disable non-critical features such as subscriptions or WAF rules if they cause cost or availability issues during testing.
+- Use manual deployment only as a short-term fallback while fixing the CI/CD pipeline.
 
 ### 8. Expected Outcomes
-- **Technical Improvements:** SMA enables users to ingest media, automatically generate semantic indices, search via natural language, and jump directly to the exact video timestamp. Replaces manual tagging and searching with an automated AI pipeline.
-- **Long-term Value:** Serves as a highly efficient Media Intelligence system for creative teams. The local-first architecture ensures quick development, while AWS mapping provides a clear upgrade path to production infrastructure.
+
+**Technical Improvements:**
+
+The final system provides a secure serverless task management application with managed authentication, real-time GraphQL updates, automated deployment, centralized monitoring, and resilient task data storage.
+
+**Long-term Value:**
+
+The architecture can be reused as a foundation for future team collaboration tools, issue tracking systems, or internal workflow applications. It also demonstrates practical AWS skills across frontend hosting, identity, serverless backend, NoSQL data modeling, monitoring, security, and CI/CD automation.

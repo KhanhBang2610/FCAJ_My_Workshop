@@ -1,0 +1,34 @@
+:root {
+  /* Tăng cỡ chữ cơ bản của toàn bộ theme để dễ nhìn hơn */
+  --MAIN-font-size: 1.5rem; 
+  /* Mở rộng chiều ngang (max-width) của phần nội dung chính, giảm khoảng trống 2 bên */
+  --MAIN-WIDTH-MAX: 85rem; 
+}
+
+body {
+  font-size: 1.5rem;
+  /* Làm chữ nội dung đậm hơn một chút (Medium) để không bị mỏng, chìm vào nền trắng */
+  font-weight: 500;
+  line-height: 1.7; /* Tăng khoảng cách dòng một chút cho dễ đọc */
+}
+
+/* Đảm bảo đề mục vẫn cực kỳ tách biệt và nổi bật (Bold/Extra Bold) */
+h1, h2, h3, h4, h5 {
+  font-weight: 700 !important;
+}
+
+/* Ensure the avatar container is nicely centered with a good size */
+.avatar-container {
+  text-align: center;
+  margin: 2rem auto;
+  display: flex;
+  justify-content: center;
+}
+
+.avatar-container img {
+  max-width: 950px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+}
